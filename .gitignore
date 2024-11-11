@@ -163,3 +163,13 @@ cython_debug/
 
 # data folder
 baseData/
+minimizedData/Modified/BA_ratbeer.csv
+minimizedData/Modified/RB_ratbeer.csv
+minimizedData/RB_beers_small.csv
+minimizedData/BA_ratings_small.csv
+minimizedData/BA_beers_small.csv
+minimizedData/BA_breweries_small.csv
+minimizedData/BA_users_small.csv
+minimizedData/RB_breweries_small.csv
+minimizedData/RB_ratings_small.csv
+minimizedData/RB_users_small.csv
