@@ -68,7 +68,7 @@ def merged_rating_beer(data_path):
         'brewery_name': 'string',
         'brewery_id': 'int64',
         'style': 'string',
-        'user_id': 'string',    # This is 'user_name' + '.' + 'int64', I put it as a string as it would be easier to modify
+        'user_id': 'int64',
         'appearance': 'float64',
         'aroma': 'float64',
         'palate': 'float64',
@@ -79,7 +79,7 @@ def merged_rating_beer(data_path):
 
     dtype_RBs_users = {
         'nbr_ratings': 'int64',
-        'user_id': 'string',    # This is 'user_name' + '.' + 'int64', I put it as a string as it would be easier to modify
+        'user_id': 'int64',
         'location': 'string'
     }
 
@@ -117,4 +117,5 @@ def merged_rating_beer(data_path):
     ## The next step is to merge these two per beer_id so that they can be associated for the rating difference. Un-comment to use.
     BAs_ratbeer = BAs_ratings_loc.merge(BAs_beers_loc[['beer_id', 'avg', 'beer_location']], on='beer_id', how='left')
     RBs_ratbeer = RBs_ratings_loc.merge(RBs_beers_loc[['beer_id', 'avg', 'beer_location']], on='beer_id', how='left')
+    
     return BAs_beers_loc, BAs_ratings_loc, RBs_beers_loc, RBs_ratings_loc, BAs_ratbeer, RBs_ratbeer
