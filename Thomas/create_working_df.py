@@ -2,10 +2,10 @@ import pandas as pd
 
 def add_country(df_loc, df_no_loc, identifier):
     df_ratings_loc = df_no_loc.merge(df_loc[[identifier, 'location']], on=identifier, how='left')
-    
+
     return df_ratings_loc
 
-def main(data_path):
+def merged_rating_beer(data_path):
     ## Define the dtypes of the csv files
     dtype_BAs_beers = {
         'beer_id': 'int64',
