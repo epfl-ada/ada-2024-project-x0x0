@@ -144,3 +144,34 @@ dtype_RB_users = {
     'joined': 'float64',
     'location': 'string'
 }
+
+
+dtype_BA_beers_loc = {
+    'beer_id': 'int64'
+    'beer_name': 'string'
+    'brewery_id': 'int64'
+    'brewery_name': 'string'
+    'style': 'string'
+    'nbr_ratings': 'int64'
+    'avg': 'float64'
+    'beer_location': 'string'
+}
+
+dtype_BA_ratbeer = {
+    'beer_name': 'string'
+    'beer_id': 'int64'
+    'brewery_name': 'string'
+    'brewery_id': 'int64'
+    'style': 'string'
+    'user_id': 'string'
+    'appearance': 'float64'
+    'aroma': 'float64'
+    'palate': 'float64'
+    'taste': 'float64'
+    'overall': 'float64'
+    'rating': 'float64'
+    'user_location': 'string'
+    'avg': 'float64'
+    'beer_location': 'string'
+}
+
