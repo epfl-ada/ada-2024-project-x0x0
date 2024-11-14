@@ -1,20 +1,38 @@
-import nbformat
-from nbconvert.preprocessors import ExecutePreprocessor
+import papermill as pm
+import logging
 
-def run_notebook(path):
-    with open(path) as f:
-        nb = nbformat.read(f, as_version=4)
-        ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
-        ep.preprocess(nb, {'metadata': {'path': './'}})
+#I found this logger code online in github issue post, it works to suppress what I want
+class PapermillFilter(logging.Filter):
+    def filter(self, record):
+        #suppress these annoying console logs
+        return not ('Executing Cell' in record.getMessage() or 'Ending Cell' in record.getMessage())
+
+# Apply the custom filter to papermill's logger
+logger = logging.getLogger('papermill')
+logger.setLevel(logging.INFO)  #Info level will show ipynb prints
+handler = logging.StreamHandler()
+handler.addFilter(PapermillFilter())  # Apply our filter
+logger.addHandler(handler)
 
 # List your notebook files here
-notebooks = [
-    'notebook1.ipynb',
-    'notebook2.ipynb',
-    'notebook3.ipynb'
+notebook_paths = [
+    'src/streamliningData/reducing_csv.ipynb',
+    'src/streamliningData/BA_reducing_txt.ipynb'
+    'src/streamliningData/RB_reducing_txt.ipynb',
+    'src/streamliningData/BA_extra_cols.ipynb',
+    'src/streamliningData/RB_extra_cols.ipynb',
+    'src/streamliningData/BA_US_data.ipynb',
+    'src/streamliningData/RB_US_data.ipynb'
+    
+    #add extract_php.ipynb
 ]
 
-for notebook in notebooks:
-    print(f"Running {notebook}...")
-    run_notebook(notebook)  # Call run_notebook with each notebook path
+for notebook in notebook_paths:
+    pm.execute_notebook(
+        notebook,
+        notebook, #dont want to make new file
+        log_output=True,
+        progress_bar=False,
+        report_mode=True
+    )
     print(f"Finished {notebook}")
