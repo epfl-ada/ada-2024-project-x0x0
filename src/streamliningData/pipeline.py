@@ -16,8 +16,8 @@ logger.addHandler(handler)
 
 # List your notebook files here
 notebook_paths = [
-    'src/streamliningData/reducing_csv.ipynb',
-    'src/streamliningData/BA_reducing_txt.ipynb'
+    #'src/streamliningData/reducing_csv.ipynb',
+    #'src/streamliningData/BA_reducing_txt.ipynb',
     'src/streamliningData/RB_reducing_txt.ipynb',
     'src/streamliningData/BA_extra_cols.ipynb',
     'src/streamliningData/RB_extra_cols.ipynb',
@@ -26,6 +26,8 @@ notebook_paths = [
     
     #add extract_php.ipynb
 ]
+
+print('\nIt takes around 12 minutes to run everything \n')
 
 for notebook in notebook_paths:
     pm.execute_notebook(
@@ -36,3 +38,5 @@ for notebook in notebook_paths:
         report_mode=True
     )
     print(f"Finished {notebook}")
+    
+print('Finished all notebooks! Congrats, you now have the right data!')
