@@ -164,8 +164,5 @@ cython_debug/
 # data folder
 baseData/
 minimizedData/
-<<<<<<< Updated upstream
 additionalData/
-=======
 USData/
->>>>>>> Stashed changes
