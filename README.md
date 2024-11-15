@@ -67,11 +67,24 @@ In a globalized beer market, understanding consumer preferences is crucial for b
 ## Research questions
 - Looking at individual countries, who prefers their beer? Do locals have higher average ratings for their beer compared to outside reviewers? And do locals rate beers coming from outside countries lower than the local beers?
 
-- Looking specifically at countries' neighbors, are certain rivalries between countries revealed? For example, will we see a German/Dutch rivalry?
+* Looking specifically at countries' neighbors, are certain rivalries between countries revealed? For example, will we see a German/Dutch rivalry?
 
-- If we cluster beers by rating and country of origin, will we see the same trend where people from a country prefer their own beers?
+* If we cluster beers by rating and country of origin, will we see the same trend where people from a country prefer their own beers?
 
-- Looking deeper into preferences, does separating by beer style reveal a style specific bias, or do people remain globally biased? (for countries that don't have sig diff, can do style analysis to see if there is)
+* Looking deeper into preferences, does separating by beer style reveal a style specific bias, or do people remain globally biased? (for countries that don't have sig diff, can do style analysis to see if there is)
 
 
 ## Proposed additional dataset
+**United States of America Geographical data**
+
+* **Source**: https://state.1keydata.com/bordering-states-list.php
+* **Usage**: Identify neighboring states for each selected state of the US to analyze regional influences
+
+
+## Method
+
+### Part 1: Cleaning up the dataset
+**Step 1**: Exploring the data \
+We started by carefully We started by carefully exploring the dataset, familiarizing ourselves with its structure and what was included in it.
+
+**Step 2**: 
