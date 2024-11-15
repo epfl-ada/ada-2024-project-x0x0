@@ -1,4 +1,3 @@
-
 # Exploring Geographical Bias in Beer Ratings: ": Is Your State Swaying Your Sip?"
 
 **Abstract**
@@ -33,17 +32,13 @@ Usage: Group each state and its neighbors as a region and look if there is a dif
 
 We started by carefully exploring the dataset, familiarizing ourselves with its structure and what it contains.
 
-
 *Step 2: Streamlining the dataset*
 
 After considering what we would need for our project, we removed unnecessary data, and reformatted the files for ease of use.
 
-
 *Step 3: Enrichment with additional datasets*
 
 Adding additional geographical data (neighbours) to aid our analyses on geographical proximity of the different locations
-
-
 
 Note: We are focussing on the US, as looking at BA data, the majority of it is US based data, and even in RB nearly a third of the data is US based. We still end up with dataframes millions of lines only, so we feel as though we have enough data for analysis. We will compare the results obtained in both datasets.
 
@@ -77,11 +72,11 @@ If we cluster beers by rating and state of origin, will we see the same trend wh
 
 1/12/24 Finish Questions 1-5 Implementation
 
-8/12/24 Compile Final Analysis
+8/12/24 Finish final analyses
 
-15/12/24 Report Writing
+15/12/24 Write report
 
-22/12/24 Milestone 3 Deadline
+20/12/24 Milestone 3 Deadline
 
 ## Team organization
 
@@ -95,7 +90,7 @@ Enzo/Alexandra: Question 3
 
 Helene/Iarantsoa: Question 4
 
-Thomas/Enzo: Questions 5
+Thomas/Enzo: Question 5
 
 ## Questions for TAs
 

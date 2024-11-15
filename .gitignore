@@ -166,3 +166,6 @@ baseData/
 minimizedData/
 additionalData/
 USData/
+
+#rand
+dtypes.txt
