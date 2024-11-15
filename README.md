@@ -64,18 +64,10 @@ We were inspired by the national pride of various countries that often claim tha
 
 ## Research questions
 
-<<<<<<< Updated upstream
-* Looking specifically at countries' neighbors, are certain rivalries between countries revealed? For example, will we see a German/Dutch rivalry?
-
-* If we cluster beers by rating and country of origin, will we see the same trend where people from a country prefer their own beers?
-
-* Looking deeper into preferences, does separating by beer style reveal a style specific bias, or do people remain globally biased? (for countries that don't have sig diff, can do style analysis to see if there is)
-=======
 - Looking at individual states, who prefers their beer? Do locals have higher average ratings for their beer compared to outside reviewers? And do locals rate beers coming from outside countries lower than the local beers?
 - Looking specifically at countries' neighbors, are certain rivalries between countries revealed? For example, will we see a German/Dutch rivalry?
 - If we cluster beers by rating and country of origin, will we see the same trend where people from a country prefer their own beers?
 - Looking deeper into preferences, does separating by beer style reveal a style specific bias, or do people remain globally biased? (for countries that don't have sig diff, can do style analysis to see if there is)
->>>>>>> Stashed changes
 
 ## Proposed additional dataset
 **United States of America Geographical data**
