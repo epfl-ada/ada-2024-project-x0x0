@@ -16,8 +16,8 @@ logger.addHandler(handler)
 
 # List your notebook files here
 notebook_paths = [
-    #'src/streamliningData/reducing_csv.ipynb',
-    #'src/streamliningData/BA_reducing_txt.ipynb',
+    'src/streamliningData/reducing_csv.ipynb',
+    'src/streamliningData/BA_reducing_txt.ipynb',
     'src/streamliningData/RB_reducing_txt.ipynb',
     'src/streamliningData/BA_extra_cols.ipynb',
     'src/streamliningData/RB_extra_cols.ipynb',
