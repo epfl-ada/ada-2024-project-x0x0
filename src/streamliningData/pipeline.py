@@ -53,8 +53,7 @@ files_to_check = [
     'baseData/BeerAdvocate/users.csv',
     'baseData/RateBeer/beers.csv',
     'baseData/RateBeer/breweries.csv',
-    'baseData/RateBeer/ratings.txt',
-    'baseData/RateBeer/reviews.txt',
+    'baseData/RateBeer/ratings.txt',  #ratings or reviews are the same, we just used ratings
     'baseData/RateBeer/users.csv',
 ]
 
