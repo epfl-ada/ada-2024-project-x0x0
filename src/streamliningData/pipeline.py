@@ -32,6 +32,8 @@ handler.addFilter(PapermillFilter())  # Apply our filter
 logger.addHandler(handler)
 
 # List your notebook files here
+
+'''
 notebook_paths = [
     'src/streamliningData/reducing_csv.ipynb',
     'src/streamliningData/BA_reducing_txt.ipynb',
@@ -39,11 +41,19 @@ notebook_paths = [
     'src/streamliningData/BA_extra_cols.ipynb',
     'src/streamliningData/RB_extra_cols.ipynb',
     'src/streamliningData/BA_US_data.ipynb',
-    'src/streamliningData/RB_US_data.ipynb'
-    
+    'src/streamliningData/RB_US_data.ipynb',
     #add extract_php.ipynb
 ]
+'''
 
+notebook_paths = [
+    'src/streamliningData/BA_knn_txt.ipynb',
+    'src/streamliningData/BA_knn_extra_cols.ipynb',
+    'src/streamliningData/BA_US_knn_text.ipynb',
+    'src/streamliningData/RB_knn_txt.ipynb',
+    'src/streamliningData/RB_knn_extra_cols.ipynb',
+    'src/streamliningData/RB_US_knn_text.ipynb'
+]
 
 files_to_check = [
     'baseData/BeerAdvocate/beers.csv',
