@@ -71,6 +71,7 @@ directories_to_check = [
     'additionalData',
     'minimizedData',
     'USData',
+    'knnData',
 ]
 
 for file in files_to_check:
