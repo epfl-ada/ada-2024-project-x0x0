@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,15822,N/A,Local,Arizona
+positive,8638,54.594867905448105,Local,Arizona
+negative,1728,10.921501706484642,Local,Arizona
+neutral,5456,34.48363038806725,Local,Arizona
+total,195122,N/A,Nonlocal,Arizona
+positive,98718,50.59296235175941,Nonlocal,Arizona
+negative,19804,10.149547462613134,Nonlocal,Arizona
+neutral,76600,39.257490185627454,Nonlocal,Arizona
