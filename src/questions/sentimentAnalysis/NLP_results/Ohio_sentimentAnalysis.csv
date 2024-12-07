@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,149536,N/A,Local,Ohio
+positive,75383,50.41127220201156,Local,Ohio
+negative,15796,10.563342606462658,Local,Ohio
+neutral,58357,39.025385191525785,Local,Ohio
+total,797340,N/A,Nonlocal,Ohio
+positive,395732,49.63152482002659,Nonlocal,Ohio
+negative,89265,11.195349537211227,Nonlocal,Ohio
+neutral,312343,39.17312564276219,Nonlocal,Ohio

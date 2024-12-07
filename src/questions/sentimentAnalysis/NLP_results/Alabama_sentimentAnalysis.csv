@@ -1,9 +1,9 @@
 sentences,count,percentage,Local/Nonlocal,user_state_NLP
-total,7433,N/A,Local,Alabama
-positive,3574,48.08287367146509,Local,Alabama
-negative,904,12.161980357863582,Local,Alabama
-neutral,2955,39.75514597067133,Local,Alabama
-total,89973,N/A,Nonlocal,Alabama
-positive,42381,47.10413123937181,Nonlocal,Alabama
-negative,10546,11.721294166027587,Nonlocal,Alabama
-neutral,37046,41.17457459460061,Nonlocal,Alabama
+total,6814,N/A,Local,Alabama
+positive,3502,51.39418843557382,Local,Alabama
+negative,770,11.300264162019372,Local,Alabama
+neutral,2542,37.30554740240681,Local,Alabama
+total,83149,N/A,Nonlocal,Alabama
+positive,41255,49.61575003908646,Nonlocal,Alabama
+negative,9616,11.564781296227254,Nonlocal,Alabama
+neutral,32278,38.81946866468628,Nonlocal,Alabama

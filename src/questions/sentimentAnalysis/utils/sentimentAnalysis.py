@@ -1,3 +1,5 @@
+from utils.prepNLP import prepare_state_data, create_nlp_doc
+
 import pandas as pd
 import matplotlib.pyplot as plt
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
@@ -16,25 +18,12 @@ def sentiment_analysis(docs, state, plots = False):
    negative_sent = []
    [negative_sent.append(analyzer.polarity_scores(sent.text)['neg']) for doc in docs for sent in doc.sents]
 
-   total_sent = []
-   [total_sent.append(analyzer.polarity_scores(sent.text)['compound']) for doc in docs for sent in doc.sents]
-
-   path = 'NLP_results/'
-   os.makedirs(os.path.dirname(path), exist_ok=True)
-   path = path + state
-   #these take a while to compute, lets save them!
-   with gzip.open(path+"_positive_sent.pkl.gz", "wb") as f:
-      pickle.dump(positive_sent, f)
-      
-   with gzip.open(path+"_negative_sent.pkl.gz", "wb") as f:
-      pickle.dump(negative_sent, f)
-      
-   with gzip.open(path+"_compound_sent.pkl.gz", "wb") as f:
-      pickle.dump(total_sent, f)
+   compound_sent = []
+   [compound_sent.append(analyzer.polarity_scores(sent.text)['compound']) for doc in docs for sent in doc.sents]
    
    positive_hist_y, positive_hist_x, _ = plt.hist(positive_sent, bins=15)
    negative_hist_y, negative_hist_x, _ = plt.hist(negative_sent, bins=15)
-   total_hist_y, total_hist_x, _ = plt.hist(total_sent, bins=15)
+   total_hist_y, total_hist_x, _ = plt.hist(compound_sent, bins=15)
    
    plt.clf() #otherwise our graphs superpose
    #plt.cla()
@@ -66,7 +55,7 @@ def sentiment_analysis(docs, state, plots = False):
       plt.show()
       
       
-      plt.hist(total_sent,bins = 15)
+      plt.hist(compound_sent,bins = 15)
       plt.xlim([-1,1])
       plt.ylim([0,max_y])
       plt.xlabel('Compound sentiment')
@@ -74,12 +63,11 @@ def sentiment_analysis(docs, state, plots = False):
       plt.tight_layout()
       plt.show()
     
-   sents = [analyzer.polarity_scores(sent.text)['compound'] for doc in docs for sent in doc.sents]
-   print('Number of positive sentences:',sum(np.array(sents)>=0.05))
-   print('Number of negative sentences:',sum(np.array(sents)<=-0.05))
-   print('Number of neutral sentences:',sum(np.abs(np.array(sents))<0.05))
+   print('Number of positive sentences:',sum(np.array(compound_sent)>=0.05))
+   print('Number of negative sentences:',sum(np.array(compound_sent)<=-0.05))
+   print('Number of neutral sentences:',sum(np.abs(np.array(compound_sent))<0.05))
     
-   return sents
+   return positive_sent, negative_sent, compound_sent
 
 
 
@@ -104,3 +92,62 @@ def sentiment_analysis_stats(sentences):
    print(df.head(4))
    
    return df
+
+
+def sentiment_analysis_results(state = str, baseData  = pd.DataFrame, save_dfs = True, plots = False):
+    print("Running...")
+    #formatting our df based on input state
+    df_local, df_nonlocal = prepare_state_data(state, baseData)
+    
+    #turning text into spacy objects, this can take a while...
+    docs_local = create_nlp_doc(df_local)
+    docs_nonlocal = create_nlp_doc(df_nonlocal)
+    
+    #turning into sentences and analysing postive/negative sentiment
+    #use plots = True if you want to see some plots
+    local_positive_sent, local_negative_sent, local_compound_sent = sentiment_analysis(docs_local, state)
+    nonlocal_positive_sent, nonlocal_negative_sent, nonlocal_compound_sent = sentiment_analysis(docs_nonlocal, state)
+    
+    path = 'NLP_results/'
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    path = path+state+'_local_sent'
+    #these take a while to compute, lets save them!
+    with gzip.open(path+"_positive.pkl.gz", "wb") as f:
+        pickle.dump(local_positive_sent, f)    
+    with gzip.open(path+"_negative.pkl.gz", "wb") as f:
+        pickle.dump(local_negative_sent, f)   
+    with gzip.open(path+"_compound.pkl.gz", "wb") as f:
+        pickle.dump(local_compound_sent, f)
+
+    path = 'NLP_results/'+state+'_nonlocal_sent'
+    #these take a while to compute, lets save them!
+    with gzip.open(path+"_positive.pkl.gz", "wb") as f:
+        pickle.dump(nonlocal_positive_sent, f)    
+    with gzip.open(path+"_negative.pkl.gz", "wb") as f:
+        pickle.dump(nonlocal_negative_sent, f)   
+    with gzip.open(path+"_compound.pkl.gz", "wb") as f:
+        pickle.dump(nonlocal_compound_sent, f)
+        
+        
+    #basic stats based on the analysis
+    df_stats_local = sentiment_analysis_stats(local_compound_sent)
+    df_stats_nonlocal = sentiment_analysis_stats(nonlocal_compound_sent)
+    
+    if save_dfs:  #these dfs took a lot of computation to get! Lets save them!
+        df_save_local = df_stats_local
+        df_save_local['Local/Nonlocal'] = 'Local'
+        df_save_local['user_state_NLP'] = state
+        
+        df_save_nonlocal = df_stats_nonlocal
+        df_save_nonlocal['Local/Nonlocal'] = 'Nonlocal'
+        df_save_nonlocal['user_state_NLP'] = state
+        
+        df_combined = pd.concat([df_save_local, df_save_nonlocal], ignore_index=True)
+        #'src/questions/sentimentAnalysis/NLP_results/' if running the py file directly
+        path = 'NLP_results/'
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        path = path + state + '_sentimentAnalysis.csv'
+        df_combined.to_csv(path, index=False)
+        print("Saved!")
+    
+    return df_stats_local, df_stats_nonlocal

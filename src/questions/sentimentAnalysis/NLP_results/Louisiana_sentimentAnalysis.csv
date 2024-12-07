@@ -1,9 +1,9 @@
 sentences,count,percentage,Local/Nonlocal,user_state_NLP
-total,10345,N/A,Local,Louisiana
-positive,4943,47.78153697438376,Local,Louisiana
-negative,1100,10.633156114064764,Local,Louisiana
-neutral,4302,41.58530691155147,Local,Louisiana
-total,87759,N/A,Nonlocal,Louisiana
-positive,40928,46.63681217880787,Nonlocal,Louisiana
-negative,9747,11.106553174033433,Nonlocal,Louisiana
-neutral,37084,42.2566346471587,Nonlocal,Louisiana
+total,9817,N/A,Local,Louisiana
+positive,4848,49.38372211469899,Local,Louisiana
+negative,1048,10.675359070999287,Local,Louisiana
+neutral,3921,39.940918814301725,Local,Louisiana
+total,82399,N/A,Nonlocal,Louisiana
+positive,39599,48.057622058520124,Nonlocal,Louisiana
+negative,9205,11.171252078301922,Nonlocal,Louisiana
+neutral,33595,40.77112586317796,Nonlocal,Louisiana

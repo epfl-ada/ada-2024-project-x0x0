@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,9496,N/A,Local,Rhode Island
+positive,4392,46.251053074978934,Local,Rhode Island
+negative,1156,12.173546756529065,Local,Rhode Island
+neutral,3948,41.575400168492,Local,Rhode Island
+total,129983,N/A,Nonlocal,Rhode Island
+positive,60022,46.1768077363963,Nonlocal,Rhode Island
+negative,14854,11.427648230922504,Nonlocal,Rhode Island
+neutral,55107,42.3955440326812,Nonlocal,Rhode Island

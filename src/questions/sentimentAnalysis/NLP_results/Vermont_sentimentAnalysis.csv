@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,37110,N/A,Local,Vermont
+positive,19105,51.482080301805446,Local,Vermont
+negative,3646,9.824845055241175,Local,Vermont
+neutral,14359,38.693074642953384,Local,Vermont
+total,91533,N/A,Nonlocal,Vermont
+positive,46676,50.993630712420654,Nonlocal,Vermont
+negative,9744,10.645341024548523,Nonlocal,Vermont
+neutral,35113,38.361028263030825,Nonlocal,Vermont

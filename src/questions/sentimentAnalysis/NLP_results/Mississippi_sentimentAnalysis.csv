@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,3220,N/A,Local,Mississippi
+positive,1462,45.40372670807453,Local,Mississippi
+negative,414,12.857142857142856,Local,Mississippi
+neutral,1344,41.73913043478261,Local,Mississippi
+total,46692,N/A,Nonlocal,Mississippi
+positive,21047,45.07624432450955,Nonlocal,Mississippi
+negative,5417,11.601559153602329,Nonlocal,Mississippi
+neutral,20228,43.32219652188812,Nonlocal,Mississippi

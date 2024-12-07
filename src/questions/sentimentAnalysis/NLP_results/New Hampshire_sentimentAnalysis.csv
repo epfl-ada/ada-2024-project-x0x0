@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,35764,N/A,Local,New Hampshire
+positive,16394,45.83939156693882,Local,New Hampshire
+negative,3660,10.2337546135779,Local,New Hampshire
+neutral,15710,43.92685381948328,Local,New Hampshire
+total,209350,N/A,Nonlocal,New Hampshire
+positive,97392,46.521136852161455,Nonlocal,New Hampshire
+negative,21364,10.204919990446621,Nonlocal,New Hampshire
+neutral,90594,43.273943157391926,Nonlocal,New Hampshire

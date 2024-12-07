@@ -1,9 +1,9 @@
 sentences,count,percentage,Local/Nonlocal,user_state_NLP
-total,12615,N/A,Local,Iowa
-positive,6018,47.705112960761,Local,Iowa
-negative,1630,12.921125644074513,Local,Iowa
-neutral,4967,39.373761395164486,Local,Iowa
-total,185327,N/A,Nonlocal,Iowa
-positive,89837,48.474857953778994,Nonlocal,Iowa
-negative,26095,14.080517139974209,Nonlocal,Iowa
-neutral,69395,37.4446249062468,Nonlocal,Iowa
+total,11919,N/A,Local,Iowa
+positive,5942,49.853175601980034,Local,Iowa
+negative,1559,13.079956372178875,Local,Iowa
+neutral,4418,37.066868025841096,Local,Iowa
+total,178119,N/A,Nonlocal,Iowa
+positive,88689,49.791992993448204,Nonlocal,Iowa
+negative,25408,14.264620843368759,Nonlocal,Iowa
+neutral,64022,35.943386163183035,Nonlocal,Iowa

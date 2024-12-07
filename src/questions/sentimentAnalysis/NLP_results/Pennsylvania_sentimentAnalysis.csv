@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,349488,N/A,Local,Pennsylvania
+positive,175397,50.186844755757,Local,Pennsylvania
+negative,38415,10.991793709655267,Local,Pennsylvania
+neutral,135676,38.82136153458774,Local,Pennsylvania
+total,1272203,N/A,Nonlocal,Pennsylvania
+positive,628188,49.37796876756304,Nonlocal,Pennsylvania
+negative,144439,11.353455384085716,Nonlocal,Pennsylvania
+neutral,499576,39.26857584835125,Nonlocal,Pennsylvania

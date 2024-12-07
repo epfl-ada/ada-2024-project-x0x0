@@ -1,9 +1,9 @@
 sentences,count,percentage,Local/Nonlocal,user_state_NLP
-total,177480,N/A,Local,Colorado
-positive,88528,49.880549921117876,Local,Colorado
-negative,20372,11.478476448050484,Local,Colorado
-neutral,68580,38.640973630831645,Local,Colorado
-total,398234,N/A,Nonlocal,Colorado
-positive,203797,51.17518845703783,Nonlocal,Colorado
-negative,44722,11.230080806761853,Nonlocal,Colorado
-neutral,149715,37.594730736200326,Nonlocal,Colorado
+total,168555,N/A,Local,Colorado
+positive,87086,51.66622170804782,Local,Colorado
+negative,19541,11.593248494556672,Local,Colorado
+neutral,61928,36.74052979739551,Local,Colorado
+total,376952,N/A,Nonlocal,Colorado
+positive,200494,53.18820433370826,Nonlocal,Colorado
+negative,42987,11.403839215603048,Nonlocal,Colorado
+neutral,133471,35.40795645068868,Nonlocal,Colorado

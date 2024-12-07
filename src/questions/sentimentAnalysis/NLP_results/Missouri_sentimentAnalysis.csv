@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,65478,N/A,Local,Missouri
+positive,32248,49.25012981459421,Local,Missouri
+negative,6247,9.540609059531446,Local,Missouri
+neutral,26983,41.20926112587434,Local,Missouri
+total,234969,N/A,Nonlocal,Missouri
+positive,115944,49.3443815992748,Nonlocal,Missouri
+negative,22544,9.594457141154791,Nonlocal,Missouri
+neutral,96481,41.06116125957041,Nonlocal,Missouri
