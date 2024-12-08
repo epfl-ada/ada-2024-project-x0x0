@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from utils.cohenD import cohen_d
+from src.questions.question3.utils.cohenD import cohen_d
 
 
 def state_cohen_D(df_US_ratings: pd.DataFrame):

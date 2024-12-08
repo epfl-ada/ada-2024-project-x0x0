@@ -1,5 +1,5 @@
 import pandas as pd
-from utils.cohenD import cohen_d
+from src.questions.question2.utils.cohenD import cohen_d
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
