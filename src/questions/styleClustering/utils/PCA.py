@@ -62,11 +62,16 @@ def perform_PCA(df_total_clustering, var_threshold, plot=True):
         index=feature_names,
         columns=[f'PC{i+1}' for i in range(n_components)]
     )
-    
+
+    # Create a dictionary to store sorted features for each principal component
+    sorted_importance = {}
     for pc in pc_feature_importance.columns:
-        pc_feature_importance[pc] = pc_feature_importance[pc].abs().sort_values(ascending=False)
-    
-    print("Feature importance in principal components:")
-    print(pc_feature_importance)
+        sorted_importance[pc] = pc_feature_importance[pc].abs().sort_values(ascending=False)
+
+    # Print the sorted importance directly
+    for pc, importance in sorted_importance.items():
+        print(f"Top features for {pc}:")
+        print(importance)
+        print()
     
     return df_pca
