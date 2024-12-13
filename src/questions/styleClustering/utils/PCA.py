@@ -55,4 +55,18 @@ def perform_PCA(df_total_clustering, var_threshold, plot=True):
     pca = PCA(n_components=n_components)
     df_pca = pca.fit_transform(df_scaled)
     
+    # Create a DataFrame for feature importance in the principal components
+    feature_names = df_cleaned.columns
+    pc_feature_importance = pd.DataFrame(
+        pca.components_.T,
+        index=feature_names,
+        columns=[f'PC{i+1}' for i in range(n_components)]
+    )
+    
+    for pc in pc_feature_importance.columns:
+        pc_feature_importance[pc] = pc_feature_importance[pc].abs().sort_values(ascending=False)
+    
+    print("Feature importance in principal components:")
+    print(pc_feature_importance)
+    
     return df_pca
