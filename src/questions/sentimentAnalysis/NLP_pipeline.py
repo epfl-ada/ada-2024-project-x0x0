@@ -7,7 +7,7 @@ import os
 import gzip
 import pickle
 
-def NLP_pipeline(US_ratings):
+def NLP_pipeline(US_ratings, path_BA):
     
     print("Running... takes 2 hours ish")
     
@@ -17,7 +17,7 @@ def NLP_pipeline(US_ratings):
     
     for state in states:
         print(state)
-        _, _ = sentiment_analysis_results(state, df_reduced)
+        _, _ = sentiment_analysis_results(state, df_reduced, path_BA)
 
     return
 
@@ -59,4 +59,4 @@ if __name__ == "__main__":
     print("Importing...")
     BA_US_knn_text = pd.read_csv('knnData/BA_US_knn_text.csv')
     #NLP_pipeline(BA_US_knn_text)
-    NLP_results_analysis
+    NLP_results_analysis(BA_US_knn_text)

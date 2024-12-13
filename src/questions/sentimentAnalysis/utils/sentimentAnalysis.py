@@ -94,7 +94,7 @@ def sentiment_analysis_stats(sentences):
    return df
 
 
-def sentiment_analysis_results(state = str, baseData  = pd.DataFrame, save_dfs = True, plots = False):
+def sentiment_analysis_results(state: str, baseData: pd.DataFrame, path_BA: str, save_dfs = True, plots = False):
     print("Running...")
     #formatting our df based on input state
     df_local, df_nonlocal = prepare_state_data(state, baseData)
@@ -108,7 +108,7 @@ def sentiment_analysis_results(state = str, baseData  = pd.DataFrame, save_dfs =
     local_positive_sent, local_negative_sent, local_compound_sent = sentiment_analysis(docs_local, state)
     nonlocal_positive_sent, nonlocal_negative_sent, nonlocal_compound_sent = sentiment_analysis(docs_nonlocal, state)
     
-    path = 'NLP_results/'
+    path = 'NLP_results/'+path_BA
     os.makedirs(os.path.dirname(path), exist_ok=True)
     path = path+state+'_local_sent'
     #these take a while to compute, lets save them!
@@ -119,7 +119,8 @@ def sentiment_analysis_results(state = str, baseData  = pd.DataFrame, save_dfs =
     with gzip.open(path+"_compound.pkl.gz", "wb") as f:
         pickle.dump(local_compound_sent, f)
 
-    path = 'NLP_results/'+state+'_nonlocal_sent'
+    path = 'NLP_results/'+path_BA
+    path = path+state+'_nonlocal_sent'
     #these take a while to compute, lets save them!
     with gzip.open(path+"_positive.pkl.gz", "wb") as f:
         pickle.dump(nonlocal_positive_sent, f)    
@@ -144,7 +145,7 @@ def sentiment_analysis_results(state = str, baseData  = pd.DataFrame, save_dfs =
         
         df_combined = pd.concat([df_save_local, df_save_nonlocal], ignore_index=True)
         #'src/questions/sentimentAnalysis/NLP_results/' if running the py file directly
-        path = 'NLP_results/'
+        path = 'NLP_results/'+path_BA
         os.makedirs(os.path.dirname(path), exist_ok=True)
         path = path + state + '_sentimentAnalysis.csv'
         df_combined.to_csv(path, index=False)

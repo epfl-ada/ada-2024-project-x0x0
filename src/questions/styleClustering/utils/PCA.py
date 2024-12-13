@@ -12,7 +12,9 @@ def prep_PCA_data(df_total_clustering):
     #we don't want to fill with 0s because that can mess up the analysis
     #so the best we can do is fill with the mean to preserve the size of the df
     df_cleaned = df_cleaned_drop.fillna(df_cleaned_drop.mean())
-    
+    print(df_cleaned.shape)
+    df_cleaned = df_cleaned.dropna(axis=1) #for some reason theres one row in RB thats NaNs, so we drop it
+    print(df_cleaned.shape)
     return df_cleaned
 
 
