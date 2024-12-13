@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,11919,N/A,Local,Iowa
+positive,5942,49.853175601980034,Local,Iowa
+negative,1559,13.079956372178875,Local,Iowa
+neutral,4418,37.066868025841096,Local,Iowa
+total,178119,N/A,Nonlocal,Iowa
+positive,88689,49.791992993448204,Nonlocal,Iowa
+negative,25408,14.264620843368759,Nonlocal,Iowa
+neutral,64022,35.943386163183035,Nonlocal,Iowa

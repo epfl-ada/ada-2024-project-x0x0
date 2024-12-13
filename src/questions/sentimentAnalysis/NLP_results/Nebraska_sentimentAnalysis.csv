@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,6819,N/A,Local,Nebraska
+positive,3313,48.58483648628831,Local,Nebraska
+negative,889,13.037102214400939,Local,Nebraska
+neutral,2617,38.37806129931075,Local,Nebraska
+total,72163,N/A,Nonlocal,Nebraska
+positive,35829,49.65009769549492,Nonlocal,Nebraska
+negative,8975,12.43712151656666,Nonlocal,Nebraska
+neutral,27359,37.912780787938416,Nonlocal,Nebraska

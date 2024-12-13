@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,123691,N/A,Local,Wisconsin
+positive,59882,48.41257650111972,Local,Wisconsin
+negative,14822,11.983086885868818,Local,Wisconsin
+neutral,48987,39.604336613011455,Local,Wisconsin
+total,273587,N/A,Nonlocal,Wisconsin
+positive,133490,48.79252303654779,Nonlocal,Wisconsin
+negative,34171,12.489994042114574,Nonlocal,Wisconsin
+neutral,105926,38.717482921337634,Nonlocal,Wisconsin

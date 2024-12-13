@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,110835,N/A,Local,Oregon
+positive,57920,52.25786078404836,Local,Oregon
+negative,13211,11.919520007217937,Local,Oregon
+neutral,39704,35.822619208733705,Local,Oregon
+total,246972,N/A,Nonlocal,Oregon
+positive,129604,52.47720389355879,Nonlocal,Oregon
+negative,31024,12.561747890449121,Nonlocal,Oregon
+neutral,86344,34.96104821599209,Nonlocal,Oregon

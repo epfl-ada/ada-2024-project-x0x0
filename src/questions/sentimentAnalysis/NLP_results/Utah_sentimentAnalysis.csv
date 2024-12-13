@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,2523,N/A,Local,Utah
+positive,1290,51.12960760998811,Local,Utah
+negative,250,9.908838684106223,Local,Utah
+neutral,983,38.961553705905665,Local,Utah
+total,11233,N/A,Nonlocal,Utah
+positive,5643,50.2359120448678,Nonlocal,Utah
+negative,1271,11.314875812338645,Nonlocal,Utah
+neutral,4319,38.449212142793556,Nonlocal,Utah
