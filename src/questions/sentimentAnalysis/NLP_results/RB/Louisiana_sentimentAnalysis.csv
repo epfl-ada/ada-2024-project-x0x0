@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,3620,N/A,Local,Louisiana
+positive,1565,43.232044198895025,Local,Louisiana
+negative,328,9.060773480662982,Local,Louisiana
+neutral,1727,47.70718232044199,Local,Louisiana
+total,33834,N/A,Nonlocal,Louisiana
+positive,14902,44.04445232606254,Nonlocal,Louisiana
+negative,2922,8.636283028905835,Nonlocal,Louisiana
+neutral,16010,47.31926464503162,Nonlocal,Louisiana

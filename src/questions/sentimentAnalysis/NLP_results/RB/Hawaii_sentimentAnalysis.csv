@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,589,N/A,Local,Hawaii
+positive,239,40.57724957555178,Local,Hawaii
+negative,61,10.35653650254669,Local,Hawaii
+neutral,289,49.06621392190153,Local,Hawaii
+total,7895,N/A,Nonlocal,Hawaii
+positive,3339,42.292590246991765,Nonlocal,Hawaii
+negative,850,10.766307789740342,Nonlocal,Hawaii
+neutral,3706,46.94110196326789,Nonlocal,Hawaii

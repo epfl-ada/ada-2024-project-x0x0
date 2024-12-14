@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,86943,N/A,Local,Virginia
+positive,30184,34.716998493265706,Local,Virginia
+negative,7514,8.642443900026455,Local,Virginia
+neutral,49245,56.640557606707844,Local,Virginia
+total,366868,N/A,Nonlocal,Virginia
+positive,141574,38.58990154496985,Nonlocal,Virginia
+negative,37411,10.197400699979283,Nonlocal,Virginia
+neutral,187883,51.21269775505086,Nonlocal,Virginia

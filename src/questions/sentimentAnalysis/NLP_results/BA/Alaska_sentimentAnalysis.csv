@@ -1,9 +1,9 @@
 sentences,count,percentage,Local/Nonlocal,user_state_NLP
-total,9984,N/A,Local,Alaska
-positive,3851,38.571714743589745,Local,Alaska
-negative,736,7.371794871794872,Local,Alaska
-neutral,5397,54.05649038461539,Local,Alaska
-total,19870,N/A,Nonlocal,Alaska
-positive,8194,41.238047307498746,Nonlocal,Alaska
-negative,1729,8.701560140915953,Nonlocal,Alaska
-neutral,9947,50.06039255158531,Nonlocal,Alaska
+total,6641,N/A,Local,Alaska
+positive,3422,51.52838427947598,Local,Alaska
+negative,710,10.691160969733474,Local,Alaska
+neutral,2509,37.78045475079054,Local,Alaska
+total,31323,N/A,Nonlocal,Alaska
+positive,17757,56.68997222488268,Nonlocal,Alaska
+negative,3506,11.193053028126297,Nonlocal,Alaska
+neutral,10060,32.116974746991026,Nonlocal,Alaska

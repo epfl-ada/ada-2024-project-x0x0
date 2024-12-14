@@ -1,9 +1,0 @@
-sentences,count,percentage,Local/Nonlocal,user_state_NLP
-total,6814,N/A,Local,Alabama
-positive,3502,51.39418843557382,Local,Alabama
-negative,770,11.300264162019372,Local,Alabama
-neutral,2542,37.30554740240681,Local,Alabama
-total,83149,N/A,Nonlocal,Alabama
-positive,41255,49.61575003908646,Nonlocal,Alabama
-negative,9616,11.564781296227254,Nonlocal,Alabama
-neutral,32278,38.81946866468628,Nonlocal,Alabama

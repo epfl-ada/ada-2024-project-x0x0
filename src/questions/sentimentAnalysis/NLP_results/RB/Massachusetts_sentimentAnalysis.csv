@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,54680,N/A,Local,Massachusetts
+positive,22735,41.57827359180688,Local,Massachusetts
+negative,6825,12.481711777615216,Local,Massachusetts
+neutral,25120,45.940014630577906,Local,Massachusetts
+total,173429,N/A,Nonlocal,Massachusetts
+positive,73756,42.52806624036349,Nonlocal,Massachusetts
+negative,21493,12.392967727427362,Nonlocal,Massachusetts
+neutral,78180,45.078966032209145,Nonlocal,Massachusetts

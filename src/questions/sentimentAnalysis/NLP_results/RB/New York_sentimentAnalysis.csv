@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,165368,N/A,Local,New York
+positive,68339,41.32540757583087,Local,New York
+negative,16999,10.279497847225581,Local,New York
+neutral,80030,48.39509457694354,Local,New York
+total,401001,N/A,Nonlocal,New York
+positive,164668,41.06423674753928,Nonlocal,New York
+negative,43559,10.862566427515144,Nonlocal,New York
+neutral,192774,48.073196824945576,Nonlocal,New York

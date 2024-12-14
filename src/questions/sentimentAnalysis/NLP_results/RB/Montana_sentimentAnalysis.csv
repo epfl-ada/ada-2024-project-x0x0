@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,2886,N/A,Local,Montana
+positive,1252,43.38184338184338,Local,Montana
+negative,228,7.900207900207901,Local,Montana
+neutral,1406,48.717948717948715,Local,Montana
+total,18472,N/A,Nonlocal,Montana
+positive,8430,45.636639237765266,Nonlocal,Montana
+negative,1964,10.632308358596795,Nonlocal,Montana
+neutral,8078,43.73105240363794,Nonlocal,Montana

@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,2026,N/A,Local,Wyoming
+positive,947,46.74234945705824,Local,Wyoming
+negative,209,10.31589338598223,Local,Wyoming
+neutral,870,42.941757156959525,Local,Wyoming
+total,10736,N/A,Nonlocal,Wyoming
+positive,4635,43.17250372578241,Nonlocal,Wyoming
+negative,916,8.53204172876304,Nonlocal,Wyoming
+neutral,5185,48.29545454545455,Nonlocal,Wyoming

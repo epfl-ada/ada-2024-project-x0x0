@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,171,N/A,Local,South Dakota
+positive,102,59.64912280701754,Local,South Dakota
+negative,25,14.619883040935672,Local,South Dakota
+neutral,44,25.730994152046783,Local,South Dakota
+total,3640,N/A,Nonlocal,South Dakota
+positive,1836,50.43956043956044,Nonlocal,South Dakota
+negative,523,14.368131868131867,Nonlocal,South Dakota
+neutral,1281,35.19230769230769,Nonlocal,South Dakota

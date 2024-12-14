@@ -8,11 +8,11 @@ import gzip
 import pickle
 
 
-def NLP_cohen_D(state, plot = True):
+def NLP_cohen_D(state, path_BA, plot = True):
     
-    localpathp = 'NLP_results/'+state+'_local_sent_positive.pkl.gz'
-    localpathn = 'NLP_results/'+state+'_local_sent_negative.pkl.gz'
-    localpathc = 'NLP_results/'+state+'_local_sent_compound.pkl.gz'
+    localpathp = 'NLP_results/'+path_BA+state+'_local_sent_positive.pkl.gz'
+    localpathn = 'NLP_results/'+path_BA+state+'_local_sent_negative.pkl.gz'
+    localpathc = 'NLP_results/'+path_BA+state+'_local_sent_compound.pkl.gz'
 
     with gzip.open(localpathp, 'rb') as f:
         local_positive_sent = pickle.load(f)
@@ -21,9 +21,9 @@ def NLP_cohen_D(state, plot = True):
     with gzip.open(localpathc, 'rb') as f:
         local_compound_sent = pickle.load(f)
         
-    nonlocalpathp = 'NLP_results/'+state+'_nonlocal_sent_positive.pkl.gz'
-    nonlocalpathn = 'NLP_results/'+state+'_nonlocal_sent_negative.pkl.gz'
-    nonlocalpathc = 'NLP_results/'+state+'_nonlocal_sent_compound.pkl.gz'
+    nonlocalpathp = 'NLP_results/'+path_BA+state+'_nonlocal_sent_positive.pkl.gz'
+    nonlocalpathn = 'NLP_results/'+path_BA+state+'_nonlocal_sent_negative.pkl.gz'
+    nonlocalpathc = 'NLP_results/'+path_BA+state+'_nonlocal_sent_compound.pkl.gz'
 
     with gzip.open(nonlocalpathp, 'rb') as f:
         nonlocal_positive_sent = pickle.load(f)
@@ -71,12 +71,12 @@ def NLP_cohen_D(state, plot = True):
     return cohen_df
 
 
-def NLP_cohen_D_all_states(states):
+def NLP_cohen_D_all_states(states, path_BA):
     
     df_cohen_all_states = pd.DataFrame(columns=['state', 'positive', 'negative', 'compound'])
     
     for state in states:
-        df_cohen = NLP_cohen_D(state, plot=False)
+        df_cohen = NLP_cohen_D(state, path_BA, plot=False)
         
         df_cohen_all_states = pd.concat([df_cohen_all_states, df_cohen], ignore_index=True)
 

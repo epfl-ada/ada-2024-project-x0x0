@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,199318,N/A,Local,Colorado
+positive,77812,39.03912341083093,Local,Colorado
+negative,20267,10.168173471537944,Local,Colorado
+neutral,101239,50.79270311763112,Local,Colorado
+total,323286,N/A,Nonlocal,Colorado
+positive,135957,42.05471316419517,Nonlocal,Colorado
+negative,34606,10.704453641667131,Nonlocal,Colorado
+neutral,152723,47.2408331941377,Nonlocal,Colorado

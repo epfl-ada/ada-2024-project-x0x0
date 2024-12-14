@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,13703,N/A,Local,Kentucky
+positive,4956,36.167262643216816,Local,Kentucky
+negative,1210,8.830183171568269,Local,Kentucky
+neutral,7537,55.00255418521491,Local,Kentucky
+total,94421,N/A,Nonlocal,Kentucky
+positive,37991,40.23575263977293,Nonlocal,Kentucky
+negative,9123,9.66204551953485,Nonlocal,Kentucky
+neutral,47307,50.10220184069222,Nonlocal,Kentucky
