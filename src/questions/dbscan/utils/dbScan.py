@@ -5,8 +5,11 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import RobustScaler
 from sklearn.neighbors import NearestNeighbors
 from sklearn.cluster import DBSCAN
+from sklearn.decomposition import PCA
+import seaborn as sns
 
 from utils.prepData import prep_data
+from utils.plots import plot_dbscan_2D_pca, plot_distributions, states_in_clusters
 
 
 
@@ -46,37 +49,22 @@ def dbscan(US_data):
     cluster_labels = dbscan.fit_predict(X_scaled)
     X_scaled['cluster'] = cluster_labels
 
-    cluster_labels_df = cluster_labels_df.merge(
-        df[['user_id', 'user_state']].drop_duplicates(),
-        on='user_id',
-        how='left'
-    )
+    return  X_scaled, cluster_labels
 
-    if 'beer_id' in df.columns:
-        cluster_labels_df = cluster_labels_df.merge(
-            df[['beer_id', 'beer_state']].drop_duplicates(),
-            on='beer_id',
-            how='left'
-        )
 
-    user_cluster_state_counts = cluster_labels_df.groupby(['cluster', 'user_state']).size().unstack(fill_value=0)
-
-    if 'beer_state' in cluster_labels_df.columns:
-        beer_cluster_state_counts = cluster_labels_df.groupby(['cluster', 'beer_state']).size().unstack(fill_value=0)
-
-    plt.figure(figsize=(12, 6))
-    sns.heatmap(user_cluster_state_counts, annot=False, fmt='d', cmap='Blues')
-    plt.title('User Distribution by Cluster and State')
-    plt.xlabel('user state')
-    plt.ylabel('Cluster')
-    plt.show()
-
-    if 'beer_state' in cluster_labels_df.columns:
-        plt.figure(figsize=(12, 6))
-        sns.heatmap(beer_cluster_state_counts, annot=False, fmt='d', cmap='Greens')
-        plt.title('Beer Distribution by Cluster and State')
-        plt.xlabel('Beer State')
-        plt.ylabel('Cluster')
-        plt.show()
+def dbscan_pipeline(US_data):
     
-    return
+    x,y = prep_data(US_data)
+    
+    scaler = RobustScaler()
+    X_scaled = pd.DataFrame(scaler.fit_transform(x), columns=x.columns)
+    
+    X_scaled_plus, cluster_labels = dbscan(X_scaled)
+    
+    #elbow(X_scaled)
+    
+    user_cluster_state_counts_t = plot_distributions(US_data, X_scaled_plus)
+    
+    states_in_clusters(user_cluster_state_counts_t)
+    
+    plot_dbscan_2D_pca(X_scaled_plus, cluster_labels)
