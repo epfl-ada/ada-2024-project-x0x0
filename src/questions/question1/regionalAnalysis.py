@@ -19,8 +19,10 @@ def regional_analysis(US_ratings, neighbours_df, plot = False):
     state_groups = build_groups(final_cohen_df)
     
     draw_map(state_groups, final_cohen_df)
+    
+    state_groups_df = pd.DataFrame(state_groups)
 
-    return
+    return state_groups_df
     
     
     
