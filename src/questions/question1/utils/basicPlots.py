@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-from src.questions.question1.utils.cohenD import cohen_d
+from utils.cohenD import cohen_d
 
 
 def region_avg_scatter(ratings_df):
