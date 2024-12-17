@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,154371,N/A,Local,Washington
+positive,68251,44.21231967144088,Local,Washington
+negative,15170,9.82697527385325,Local,Washington
+neutral,70950,45.96070505470587,Local,Washington
+total,512254,N/A,Nonlocal,Washington
+positive,232428,45.373584198464044,Nonlocal,Washington
+negative,49112,9.58743123528562,Nonlocal,Washington
+neutral,230714,45.038984566250335,Nonlocal,Washington

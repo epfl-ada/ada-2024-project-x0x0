@@ -12,7 +12,9 @@ def prep_PCA_data(df_total_clustering):
     #we don't want to fill with 0s because that can mess up the analysis
     #so the best we can do is fill with the mean to preserve the size of the df
     df_cleaned = df_cleaned_drop.fillna(df_cleaned_drop.mean())
-    
+    print(df_cleaned.shape)
+    df_cleaned = df_cleaned.dropna(axis=1) #for some reason theres one row in RB thats NaNs, so we drop it
+    print(df_cleaned.shape)
     return df_cleaned
 
 
@@ -54,5 +56,24 @@ def perform_PCA(df_total_clustering, var_threshold, plot=True):
 
     pca = PCA(n_components=n_components)
     df_pca = pca.fit_transform(df_scaled)
+    
+    # Create a DataFrame for feature importance in the principal components
+    feature_names = df_cleaned.columns
+    pc_feature_importance = pd.DataFrame(
+        pca.components_.T,
+        index=feature_names,
+        columns=[f'PC{i+1}' for i in range(n_components)]
+    )
+
+    # Create a dictionary to store sorted features for each principal component
+    sorted_importance = {}
+    for pc in pc_feature_importance.columns:
+        sorted_importance[pc] = pc_feature_importance[pc].abs().sort_values(ascending=False)
+
+    # Print the sorted importance directly
+    for pc, importance in sorted_importance.items():
+        print(f"Top features for {pc}:")
+        print(importance)
+        print()
     
     return df_pca

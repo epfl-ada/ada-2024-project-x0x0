@@ -164,6 +164,7 @@ cython_debug/
 # data folder
 baseData/
 minimizedData/
+
 additionalData/
 USData/
 knnData/

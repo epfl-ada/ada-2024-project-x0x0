@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,197,N/A,Local,North Dakota
+positive,115,58.37563451776649,Local,North Dakota
+negative,14,7.1065989847715745,Local,North Dakota
+neutral,68,34.51776649746193,Local,North Dakota
+total,7907,N/A,Nonlocal,North Dakota
+positive,3992,50.48691033261667,Nonlocal,North Dakota
+negative,768,9.712912609080561,Nonlocal,North Dakota
+neutral,3147,39.80017705830277,Nonlocal,North Dakota

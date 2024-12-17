@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,73893,N/A,Local,North Carolina
+positive,30979,41.924133544449404,Local,North Carolina
+negative,7420,10.041546560567307,Local,North Carolina
+neutral,35494,48.034319894983284,Local,North Carolina
+total,295903,N/A,Nonlocal,North Carolina
+positive,121796,41.160785798048686,Nonlocal,North Carolina
+negative,30767,10.39766409938392,Nonlocal,North Carolina
+neutral,143340,48.44155010256739,Nonlocal,North Carolina

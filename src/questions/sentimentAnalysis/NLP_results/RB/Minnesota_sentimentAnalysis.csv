@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,138329,N/A,Local,Minnesota
+positive,53740,38.849409740546086,Local,Minnesota
+negative,12751,9.217879114285507,Local,Minnesota
+neutral,71838,51.9327111451684,Local,Minnesota
+total,380096,N/A,Nonlocal,Minnesota
+positive,158508,41.70209631251052,Nonlocal,Minnesota
+negative,35566,9.357109782791715,Nonlocal,Minnesota
+neutral,186022,48.94079390469776,Nonlocal,Minnesota

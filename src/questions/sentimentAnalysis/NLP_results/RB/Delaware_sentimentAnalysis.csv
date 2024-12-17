@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,4310,N/A,Local,Delaware
+positive,1857,43.085846867749424,Local,Delaware
+negative,452,10.48723897911833,Local,Delaware
+neutral,2001,46.426914153132245,Local,Delaware
+total,58120,N/A,Nonlocal,Delaware
+positive,24543,42.22814865794907,Nonlocal,Delaware
+negative,6335,10.89986235375086,Nonlocal,Delaware
+neutral,27242,46.87198898830007,Nonlocal,Delaware

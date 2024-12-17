@@ -42,7 +42,14 @@ def regions_cohenD(df_neighbours, US_ratings, plot=True):
         plt.xlabel("Center State of each Region")
         plt.ylabel("Cohen's D value")
         plt.xticks(rotation=90)
+        
         plt.axhline(y=0, color='black', linewidth=1)
+
+        plt.axhline(y=0.2, color='#FFA07A', linestyle=':', linewidth=2, label='Small effect (d=0.2)')
+        plt.axhline(y=-0.2, color='#FFA07A', linestyle=':', linewidth=2)
+        plt.axhline(y=0.5, color='#FF8C00', linestyle=':', linewidth=2, label='Medium effect (d=0.5)')
+        plt.axhline(y=-0.5, color='#FF8C00', linestyle=':', linewidth=2)
+
         plt.tight_layout()
         plt.show()
         

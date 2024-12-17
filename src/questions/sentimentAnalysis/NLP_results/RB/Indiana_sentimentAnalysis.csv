@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,70040,N/A,Local,Indiana
+positive,27947,39.90148486579098,Local,Indiana
+negative,6136,8.76070816676185,Local,Indiana
+neutral,35957,51.33780696744717,Local,Indiana
+total,250367,N/A,Nonlocal,Indiana
+positive,108716,43.42265554166483,Nonlocal,Indiana
+negative,25218,10.072413696693253,Nonlocal,Indiana
+neutral,116433,46.50493076164191,Nonlocal,Indiana

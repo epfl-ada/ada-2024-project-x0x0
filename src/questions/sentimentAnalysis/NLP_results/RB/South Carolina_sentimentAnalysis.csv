@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,5287,N/A,Local,South Carolina
+positive,2345,44.35407603555892,Local,South Carolina
+negative,614,11.613391337242291,Local,South Carolina
+neutral,2328,44.03253262719879,Local,South Carolina
+total,55921,N/A,Nonlocal,South Carolina
+positive,24723,44.210582786430855,Nonlocal,South Carolina
+negative,6518,11.655728617156345,Nonlocal,South Carolina
+neutral,24680,44.133688596412796,Nonlocal,South Carolina

@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,80975,N/A,Local,Florida
+positive,31859,39.34424205001544,Local,Florida
+negative,7965,9.836369249768447,Local,Florida
+neutral,41151,50.819388700216116,Local,Florida
+total,549956,N/A,Nonlocal,Florida
+positive,239029,43.46329524543782,Nonlocal,Florida
+negative,59076,10.741950265112118,Nonlocal,Florida
+neutral,251851,45.794754489450064,Nonlocal,Florida

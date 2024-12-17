@@ -7,7 +7,7 @@ import os
 import gzip
 import pickle
 
-def NLP_pipeline(US_ratings):
+def NLP_pipeline(US_ratings, path_BA):
     
     print("Running... takes 2 hours ish")
     
@@ -17,11 +17,11 @@ def NLP_pipeline(US_ratings):
     
     for state in states:
         print(state)
-        _, _ = sentiment_analysis_results(state, df_reduced)
+        _, _ = sentiment_analysis_results(state, df_reduced, path_BA)
 
     return
 
-def NLP_results_analysis(US_ratings):
+def NLP_results_analysis(US_ratings, path_BA):
     
     df_reduced = US_ratings[['text','user_state','beer_state']]
     states = df_reduced['user_state'].unique().tolist()
@@ -32,7 +32,7 @@ def NLP_results_analysis(US_ratings):
     nonlocal_percents = pd.DataFrame(columns=['state', 'sentences', 'percentage'])
     
     for state in states:
-        df = pd.read_csv('NLP_results/'+state+'_sentimentAnalysis.csv')
+        df = pd.read_csv('NLP_results/'+path_BA+state+'_sentimentAnalysis.csv')
         df_local = df[df['Local/Nonlocal'] == 'Local']
         df_nonlocal = df[df['Local/Nonlocal'] == 'Nonlocal']
         
@@ -51,7 +51,7 @@ def NLP_results_analysis(US_ratings):
         
     plot_stacked_sentiments(local_percents, nonlocal_percents)
     plot_chi_results(significance)
-    NLP_cohen_D_all_states(states)
+    NLP_cohen_D_all_states(states, path_BA)
 
     return
 
@@ -59,4 +59,4 @@ if __name__ == "__main__":
     print("Importing...")
     BA_US_knn_text = pd.read_csv('knnData/BA_US_knn_text.csv')
     #NLP_pipeline(BA_US_knn_text)
-    NLP_results_analysis
+    NLP_results_analysis(BA_US_knn_text)

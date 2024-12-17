@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,134379,N/A,Local,Michigan
+positive,57441,42.74551827294443,Local,Michigan
+negative,13577,10.103513197746672,Local,Michigan
+neutral,63361,47.1509685293089,Local,Michigan
+total,266520,N/A,Nonlocal,Michigan
+positive,127860,47.9738856371004,Nonlocal,Michigan
+negative,27165,10.192480864475462,Nonlocal,Michigan
+neutral,111495,41.833633498424135,Nonlocal,Michigan
