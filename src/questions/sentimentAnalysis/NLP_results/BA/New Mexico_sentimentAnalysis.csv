@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,5889,N/A,Local,New Mexico
+positive,2974,50.500933944642554,Local,New Mexico
+negative,569,9.66208184751231,Local,New Mexico
+neutral,2346,39.836984207845134,Local,New Mexico
+total,49186,N/A,Nonlocal,New Mexico
+positive,24452,49.71333306225348,Nonlocal,New Mexico
+negative,5295,10.76525840686374,Nonlocal,New Mexico
+neutral,19439,39.52140853088277,Nonlocal,New Mexico

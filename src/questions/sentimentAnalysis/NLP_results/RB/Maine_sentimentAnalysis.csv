@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,9112,N/A,Local,Maine
+positive,4192,46.00526777875329,Local,Maine
+negative,1001,10.985513608428446,Local,Maine
+neutral,3919,43.00921861281826,Local,Maine
+total,26284,N/A,Nonlocal,Maine
+positive,12728,48.4248972759093,Nonlocal,Maine
+negative,2812,10.69852381677066,Nonlocal,Maine
+neutral,10744,40.876578907320045,Nonlocal,Maine

@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,679305,N/A,Local,California
+positive,268236,39.48682844966547,Local,California
+negative,68921,10.145810791912323,Local,California
+neutral,342148,50.36736075842221,Local,California
+total,688095,N/A,Nonlocal,California
+positive,275114,39.98197923251877,Nonlocal,California
+negative,74891,10.883816914815542,Nonlocal,California
+neutral,338090,49.13420385266569,Nonlocal,California

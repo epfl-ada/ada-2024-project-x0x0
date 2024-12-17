@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,146865,N/A,Local,Texas
+positive,58146,39.591461546318044,Local,Texas
+negative,15102,10.282912879174752,Local,Texas
+neutral,73617,50.125625574507204,Local,Texas
+total,400425,N/A,Nonlocal,Texas
+positive,165391,41.30386464381595,Nonlocal,Texas
+negative,41322,10.319535493538117,Nonlocal,Texas
+neutral,193712,48.37659986264594,Nonlocal,Texas

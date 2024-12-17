@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,13903,N/A,Local,Connecticut
+positive,5515,39.66769761921887,Local,Connecticut
+negative,1306,9.393656045457815,Local,Connecticut
+neutral,7082,50.93864633532331,Local,Connecticut
+total,107994,N/A,Nonlocal,Connecticut
+positive,43139,39.94573772616997,Nonlocal,Connecticut
+negative,10434,9.661647869326073,Nonlocal,Connecticut
+neutral,54421,50.39261440450395,Nonlocal,Connecticut

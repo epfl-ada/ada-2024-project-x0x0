@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,46135,N/A,Local,Maryland
+positive,19331,41.900942885011375,Local,Maryland
+negative,4662,10.105126259889454,Local,Maryland
+neutral,22142,47.993930855099165,Local,Maryland
+total,271978,N/A,Nonlocal,Maryland
+positive,118127,43.43255704505511,Nonlocal,Maryland
+negative,29916,10.999419070660126,Nonlocal,Maryland
+neutral,123935,45.568023884284756,Nonlocal,Maryland

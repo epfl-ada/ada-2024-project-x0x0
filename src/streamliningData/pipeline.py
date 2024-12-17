@@ -35,24 +35,24 @@ logger.addHandler(handler)
 
 '''
 notebook_paths = [
-    'src/streamliningData/reducing_csv.ipynb',
-    'src/streamliningData/BA_reducing_txt.ipynb',
-    'src/streamliningData/RB_reducing_txt.ipynb',
-    'src/streamliningData/BA_extra_cols.ipynb',
-    'src/streamliningData/RB_extra_cols.ipynb',
-    'src/streamliningData/BA_US_data.ipynb',
-    'src/streamliningData/RB_US_data.ipynb',
+    'src/streamliningData/utils/reducing_csv.ipynb',
+    'src/streamliningData/utils/BA_reducing_txt.ipynb',
+    'src/streamliningData/utils/RB_reducing_txt.ipynb',
+    'src/streamliningData/utils/BA_extra_cols.ipynb',
+    'src/streamliningData/utils/RB_extra_cols.ipynb',
+    'src/streamliningData/utils/BA_US_data.ipynb',
+    'src/streamliningData/utils/RB_US_data.ipynb',
     #add extract_php.ipynb
 ]
 '''
 
 notebook_paths = [
-    'src/streamliningData/BA_knn_txt.ipynb',
-    'src/streamliningData/BA_knn_extra_cols.ipynb',
-    'src/streamliningData/BA_US_knn_text.ipynb',
-    'src/streamliningData/RB_knn_txt.ipynb',
-    'src/streamliningData/RB_knn_extra_cols.ipynb',
-    'src/streamliningData/RB_US_knn_text.ipynb'
+    'src/streamliningData/utils/BA_knn_txt.ipynb',
+    'src/streamliningData/utils/BA_knn_extra_cols.ipynb',
+    'src/streamliningData/utils/BA_US_knn_text.ipynb',
+    'src/streamliningData/utils/RB_knn_txt.ipynb',
+    'src/streamliningData/utils/RB_knn_extra_cols.ipynb',
+    'src/streamliningData/utils/RB_US_knn_text.ipynb'
 ]
 
 files_to_check = [

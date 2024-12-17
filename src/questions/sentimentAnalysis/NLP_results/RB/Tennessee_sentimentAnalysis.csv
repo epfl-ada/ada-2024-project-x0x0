@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,22643,N/A,Local,Tennessee
+positive,8545,37.73793225279336,Local,Tennessee
+negative,2278,10.060504350130284,Local,Tennessee
+neutral,11820,52.201563397076356,Local,Tennessee
+total,195481,N/A,Nonlocal,Tennessee
+positive,76448,39.10763705935615,Nonlocal,Tennessee
+negative,20957,10.720735007494335,Nonlocal,Tennessee
+neutral,98076,50.17162793314951,Nonlocal,Tennessee

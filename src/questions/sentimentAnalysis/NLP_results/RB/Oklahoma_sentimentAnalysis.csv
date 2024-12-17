@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,5816,N/A,Local,Oklahoma
+positive,2443,42.00481430536451,Local,Oklahoma
+negative,603,10.367950481430537,Local,Oklahoma
+neutral,2770,47.62723521320495,Local,Oklahoma
+total,38587,N/A,Nonlocal,Oklahoma
+positive,16038,41.563220773835745,Nonlocal,Oklahoma
+negative,4074,10.55795993469303,Nonlocal,Oklahoma
+neutral,18475,47.87881929147122,Nonlocal,Oklahoma

@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,55496,N/A,Local,Georgia
+positive,27117,48.862981115756085,Local,Georgia
+negative,6157,11.094493296814186,Local,Georgia
+neutral,22222,40.04252558742972,Local,Georgia
+total,355359,N/A,Nonlocal,Georgia
+positive,174240,49.03210556085536,Nonlocal,Georgia
+negative,41696,11.733486417960428,Nonlocal,Georgia
+neutral,139423,39.23440802118421,Nonlocal,Georgia

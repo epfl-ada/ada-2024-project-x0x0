@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,9980,N/A,Local,Kansas
+positive,4315,43.236472945891784,Local,Kansas
+negative,664,6.653306613226453,Local,Kansas
+neutral,5001,50.11022044088176,Local,Kansas
+total,98172,N/A,Nonlocal,Kansas
+positive,42980,43.78030395632156,Nonlocal,Kansas
+negative,7111,7.243409526137799,Nonlocal,Kansas
+neutral,48081,48.97628651754064,Nonlocal,Kansas

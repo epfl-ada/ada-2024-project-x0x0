@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,181484,N/A,Local,Illinois
+positive,88079,48.532653016243856,Local,Illinois
+negative,20449,11.26765995900465,Local,Illinois
+neutral,72956,40.1996870247515,Local,Illinois
+total,943108,N/A,Nonlocal,Illinois
+positive,459095,48.67894239047914,Nonlocal,Illinois
+negative,111187,11.789423904791391,Nonlocal,Illinois
+neutral,372826,39.531633704729465,Nonlocal,Illinois

@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,2371,N/A,Local,Nevada
+positive,1208,50.94896668072543,Local,Nevada
+negative,264,11.134542387178406,Local,Nevada
+neutral,899,37.91649093209617,Local,Nevada
+total,63630,N/A,Nonlocal,Nevada
+positive,30785,48.38126669809838,Nonlocal,Nevada
+negative,7923,12.451673738802452,Nonlocal,Nevada
+neutral,24922,39.167059563099166,Nonlocal,Nevada

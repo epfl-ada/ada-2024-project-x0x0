@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,1568,N/A,Local,West Virginia
+positive,850,54.20918367346938,Local,West Virginia
+negative,176,11.224489795918368,Local,West Virginia
+neutral,542,34.566326530612244,Local,West Virginia
+total,66771,N/A,Nonlocal,West Virginia
+positive,37300,55.86257507001543,Nonlocal,West Virginia
+negative,7225,10.820565814500307,Nonlocal,West Virginia
+neutral,22246,33.31685911548426,Nonlocal,West Virginia

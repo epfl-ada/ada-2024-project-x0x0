@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,1771,N/A,Local,Arkansas
+positive,940,53.077357425183514,Local,Arkansas
+negative,213,12.027103331451157,Local,Arkansas
+neutral,618,34.895539243365334,Local,Arkansas
+total,40809,N/A,Nonlocal,Arkansas
+positive,22808,55.88963218897792,Nonlocal,Arkansas
+negative,4774,11.69839986277537,Nonlocal,Arkansas
+neutral,13227,32.41196794824671,Nonlocal,Arkansas

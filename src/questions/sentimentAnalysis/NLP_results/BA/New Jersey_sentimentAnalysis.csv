@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,41981,N/A,Local,New Jersey
+positive,21146,50.3704056597032,Local,New Jersey
+negative,4499,10.716752816750434,Local,New Jersey
+neutral,16336,38.91284152354636,Local,New Jersey
+total,527256,N/A,Nonlocal,New Jersey
+positive,263924,50.05613971201846,Nonlocal,New Jersey
+negative,61889,11.737941341587387,Nonlocal,New Jersey
+neutral,201443,38.20591894639416,Nonlocal,New Jersey

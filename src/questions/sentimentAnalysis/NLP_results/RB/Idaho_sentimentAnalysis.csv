@@ -1,0 +1,9 @@
+sentences,count,percentage,Local/Nonlocal,user_state_NLP
+total,23930,N/A,Local,Idaho
+positive,10483,43.806936899289596,Local,Idaho
+negative,2160,9.02632678646051,Local,Idaho
+neutral,11287,47.166736314249896,Local,Idaho
+total,122961,N/A,Nonlocal,Idaho
+positive,55343,45.008579956246294,Nonlocal,Idaho
+negative,11639,9.465602914745325,Nonlocal,Idaho
+neutral,55979,45.52581712900838,Nonlocal,Idaho
