@@ -27,5 +27,6 @@ def plot_beer_breweries_distribution(breweries: pd.DataFrame):
     plt.title('Total Number of Beers and Breweries per Location')
     plt.xticks([])  #remove x-tick labels for clarity
     plt.tight_layout()
-    
+    plt.show()
+        
     return

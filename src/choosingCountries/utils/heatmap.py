@@ -18,3 +18,8 @@ def heatmap_avg_ratings(US_ratings):
     plt.xlabel('Beer State', fontsize=12)
     plt.ylabel('User State', fontsize=12)
     plt.tight_layout()
+    
+    plt.show()
+    
+    return
+    

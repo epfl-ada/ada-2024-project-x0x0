@@ -93,6 +93,7 @@ def plot_chi_results(df_results):
     
     #significance thresholds
     plt.axhline(0.1, color='orange', linestyle='--', linewidth=1, label='Small effect threshold (0.1)')
+    plt.axhline(0.3, color='orange', linestyle='--', linewidth=1, label='Medium effect threshold (0.3)')
 
     plt.title('Cramers V Results with p-values by State')
     plt.xlabel('State')
