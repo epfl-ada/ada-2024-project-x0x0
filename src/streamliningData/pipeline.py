@@ -56,15 +56,15 @@ notebook_paths = [
 ]
 
 files_to_check = [
-    'baseData/BeerAdvocate/beers.csv',
-    'baseData/BeerAdvocate/breweries.csv',
-    'baseData/BeerAdvocate/ratings.txt',
-    'baseData/BeerAdvocate/reviews.txt',
-    'baseData/BeerAdvocate/users.csv',
-    'baseData/RateBeer/beers.csv',
-    'baseData/RateBeer/breweries.csv',
-    'baseData/RateBeer/ratings.txt',  #ratings or reviews are the same, we just used ratings
-    'baseData/RateBeer/users.csv',
+    'data/baseData/BeerAdvocate/beers.csv',
+    'data/baseData/BeerAdvocate/breweries.csv',
+    'data/baseData/BeerAdvocate/ratings.txt',
+    'data/baseData/BeerAdvocate/reviews.txt',
+    'data/baseData/BeerAdvocate/users.csv',
+    'data/baseData/RateBeer/beers.csv',
+    'data/baseData/RateBeer/breweries.csv',
+    'data/baseData/RateBeer/ratings.txt',  #ratings or reviews are the same, we just used ratings
+    'data/baseData/RateBeer/users.csv',
 ]
 
 directories_to_check = [
