@@ -1,6 +1,7 @@
 import pandas as pd
 import geopandas as gpd
 import plotly.express as px
+import os
 
 
 
@@ -24,9 +25,15 @@ def draw_map(state_groups, final_cohen_df):
     grouped_states_df = grouped_states_df.merge(hover_df[['state_abbreviation', 'hover_text']], on='state_abbreviation', how='left')
     
     # Step 10: Plot choropleth map
+    custom_palette = [
+        "#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00",
+        "#cab2d6", "#6a3d9a", "#ffff99", "#b15928", "#f2a7c3", "#d1f2a5", "#ffb3b3", "#ffcc99",
+        "#ccebc5", "#ffb6e6", "#d0f0c0", "#f9c9b6"
+    ]
+
+    # Use the custom palette in your color map
     num_groups = len(grouped_states_df['group'].unique())
-    colors = px.colors.qualitative.Set2
-    color_map = {f'Group {idx + 1}': colors[idx % len(colors)] for idx in range(num_groups)}
+    color_map = {f'Group {idx + 1}': custom_palette[idx % len(custom_palette)] for idx in range(num_groups)}
     color_map['No Group'] = 'grey'
 
     fig = px.choropleth(
@@ -42,11 +49,12 @@ def draw_map(state_groups, final_cohen_df):
 
     fig.update_traces(hovertemplate='%{customdata[0]}<br><br>%{customdata[3]}')
 
+
     fig.update_layout(
         title_text = 'State Groups by Cohen\'s d',
         geo_scope='usa',
-        width=900,  # Adjust width
-        height=600,  # Adjust height
+        width=700,  # Adjust width
+        height=500,  # Adjust height
         title_font=dict(size=20),  # Optional: Increase title font size
         geo=dict(
             projection_type="albers usa"  # Optional: Adjust projection style if necessary
@@ -54,6 +62,8 @@ def draw_map(state_groups, final_cohen_df):
     )
 
     fig.show()
+    directory = "img/question1/"
+    fig.write_html(os.path.join(directory, "custom_region.html"))
     
     return
     
