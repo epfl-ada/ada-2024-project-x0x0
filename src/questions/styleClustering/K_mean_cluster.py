@@ -1,8 +1,8 @@
 import pandas as pd
 
-from utils.prepData import prep_data
-from utils.PCA import perform_PCA
-from utils.cluster import perform_clustering
+from src.questions.styleClustering.utils.prepData import prep_data
+from src.questions.styleClustering.utils.PCA import perform_PCA
+from src.questions.styleClustering.utils.cluster import perform_clustering
 
 def run_clustering(US_knn_text):
     
