@@ -62,6 +62,7 @@ def plot_reviews(breweries, BA_merged):
     ax.grid(True, linestyle='--', alpha=0.7)
     ax.legend(loc='upper left')
     plt.tight_layout()
-    plt.plot()
+    
+    plt.show()
     
     return

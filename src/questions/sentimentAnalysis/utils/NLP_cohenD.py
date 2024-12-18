@@ -10,9 +10,10 @@ import pickle
 
 def NLP_cohen_D(state, path_BA, plot = True):
     
-    localpathp = 'NLP_results/'+path_BA+state+'_local_sent_positive.pkl.gz'
-    localpathn = 'NLP_results/'+path_BA+state+'_local_sent_negative.pkl.gz'
-    localpathc = 'NLP_results/'+path_BA+state+'_local_sent_compound.pkl.gz'
+    origin = 'src/questions/sentimentAnalysis/'
+    localpathp = origin+'NLP_results/'+path_BA+state+'_local_sent_positive.pkl.gz'
+    localpathn = origin+'NLP_results/'+path_BA+state+'_local_sent_negative.pkl.gz'
+    localpathc = origin+'NLP_results/'+path_BA+state+'_local_sent_compound.pkl.gz'
 
     with gzip.open(localpathp, 'rb') as f:
         local_positive_sent = pickle.load(f)
@@ -21,9 +22,9 @@ def NLP_cohen_D(state, path_BA, plot = True):
     with gzip.open(localpathc, 'rb') as f:
         local_compound_sent = pickle.load(f)
         
-    nonlocalpathp = 'NLP_results/'+path_BA+state+'_nonlocal_sent_positive.pkl.gz'
-    nonlocalpathn = 'NLP_results/'+path_BA+state+'_nonlocal_sent_negative.pkl.gz'
-    nonlocalpathc = 'NLP_results/'+path_BA+state+'_nonlocal_sent_compound.pkl.gz'
+    nonlocalpathp = origin+'NLP_results/'+path_BA+state+'_nonlocal_sent_positive.pkl.gz'
+    nonlocalpathn = origin+'NLP_results/'+path_BA+state+'_nonlocal_sent_negative.pkl.gz'
+    nonlocalpathc = origin+'NLP_results/'+path_BA+state+'_nonlocal_sent_compound.pkl.gz'
 
     with gzip.open(nonlocalpathp, 'rb') as f:
         nonlocal_positive_sent = pickle.load(f)
@@ -56,8 +57,6 @@ def NLP_cohen_D(state, path_BA, plot = True):
         plt.axhline(y=-0.2, color='#FFA07A', linestyle=':', linewidth=2)
         plt.axhline(y=0.5, color='#FF8C00', linestyle=':', linewidth=2, label='Medium effect (d=0.5)')
         plt.axhline(y=-0.5, color='#FF8C00', linestyle=':', linewidth=2)
-        plt.axhline(y=0.8, color='#CD3700', linestyle=':', linewidth=2, label='Large effect (d=0.8)')
-        plt.axhline(y=-0.8, color='#CD3700', linestyle=':', linewidth=2)
 
         plt.xlabel('sentence analysis type')
         plt.ylabel('Cohen’s D')
@@ -98,8 +97,6 @@ def NLP_cohen_D_all_states(states, path_BA):
     plt.axhline(y=-0.2, color='#FFA07A', linestyle=':', linewidth=2)
     plt.axhline(y=0.5, color='#FF8C00', linestyle=':', linewidth=2, label='Medium effect (d=0.5)')
     plt.axhline(y=-0.5, color='#FF8C00', linestyle=':', linewidth=2)
-    plt.axhline(y=0.8, color='#CD3700', linestyle=':', linewidth=2, label='Large effect (d=0.8)')
-    plt.axhline(y=-0.8, color='#CD3700', linestyle=':', linewidth=2)
 
     plt.xlabel('State')
     plt.ylabel('Cohens D')

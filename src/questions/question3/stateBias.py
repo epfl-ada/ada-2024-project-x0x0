@@ -1,8 +1,8 @@
 import pandas as pd
 
-from utils.weighted_ratings import weighted_ratings
-from utils.state_scatter import state_scatter_plot
-from utils.state_cohenD import state_cohen_D, state_distribution
+from src.questions.question3.utils.weighted_ratings import weighted_ratings
+from src.questions.question3.utils.state_scatter import state_scatter_plot
+from src.questions.question3.utils.state_cohenD import state_cohen_D, state_distribution
 
 
 def state_bias(US_ratings):

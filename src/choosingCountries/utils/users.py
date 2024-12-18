@@ -24,5 +24,6 @@ def plot_users(users):
     plt.title('Total number of users by location (>100 users)')
     plt.xticks([])  #remove x-tick labels for clarity
     plt.tight_layout()
+    plt.show()
     
     return

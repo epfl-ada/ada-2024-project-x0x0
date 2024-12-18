@@ -32,7 +32,7 @@ def NLP_results_analysis(US_ratings, path_BA):
     nonlocal_percents = pd.DataFrame(columns=['state', 'sentences', 'percentage'])
     
     for state in states:
-        df = pd.read_csv('NLP_results/'+path_BA+state+'_sentimentAnalysis.csv')
+        df = pd.read_csv('src/questions/sentimentAnalysis/NLP_results/'+path_BA+state+'_sentimentAnalysis.csv')
         df_local = df[df['Local/Nonlocal'] == 'Local']
         df_nonlocal = df[df['Local/Nonlocal'] == 'Nonlocal']
         
