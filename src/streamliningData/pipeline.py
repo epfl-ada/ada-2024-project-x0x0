@@ -68,10 +68,10 @@ files_to_check = [
 ]
 
 directories_to_check = [
-    'additionalData',
-    'minimizedData',
-    'USData',
-    'knnData',
+    'data/additionalData',
+    'data/minimizedData',
+    'data/USData',
+    'data/knnData',
 ]
 
 for file in files_to_check:
