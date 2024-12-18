@@ -12,7 +12,7 @@ def draw_map(state_groups):
     print(grouped_states_df.head(2))
     
     num_groups = len(grouped_states_df['group'].unique())
-    colors = px.colors.qualitative.Set2
+    colors = px.colors.qualitative.Pastel
     color_map = {f'Group {idx + 1}': colors[idx % len(colors)] for idx in range(num_groups)}
     color_map['No Group'] = 'grey'
 
@@ -28,7 +28,7 @@ def draw_map(state_groups):
     fig.update_traces(hovertemplate='%{customdata[0]}<br><br>%{customdata[3]}')
 
     fig.update_layout(
-        title_text = 'State Groups by Cohen\'s d',
+        title_text = 'State clustered by beer style parameters',
         geo_scope='usa',
         width=900,  # Adjust width
         height=600,  # Adjust height
