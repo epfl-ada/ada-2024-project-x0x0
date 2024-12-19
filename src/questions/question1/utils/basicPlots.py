@@ -126,13 +126,13 @@ def plot_cohenD_some_states(ratings_df, plot = False):
     all_cohen_results = []
 
     for region in ratings_df['region'].unique():
+        if region != 'Illinois' and region != 'Nevada': continue
+        
         subset = ratings_df[ratings_df['region'] == region]
         cohen_results = []
         processed_pairs = set()
         
         for state1 in subset['user_state'].unique():
-            if state1 != 'Illinois' and state1 != 'Nevada':
-                continue
             
             for state2 in subset['user_state'].unique():
                 if state1 != state2:

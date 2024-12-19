@@ -25,16 +25,13 @@ def draw_map(state_groups, final_cohen_df):
     grouped_states_df = grouped_states_df.merge(hover_df[['state_abbreviation', 'hover_text']], on='state_abbreviation', how='left')
     
     # Step 10: Plot choropleth map
-    custom_palette = [
-        "#a6cee3", "#1f78b4", "#b2df8a", "#33a02c", "#fb9a99", "#e31a1c", "#fdbf6f", "#ff7f00",
-        "#cab2d6", "#6a3d9a", "#ffff99", "#b15928", "#f2a7c3", "#d1f2a5", "#ffb3b3", "#ffcc99",
-        "#ccebc5", "#ffb6e6", "#d0f0c0", "#f9c9b6"
-    ]
+    custom_palette = ['#a7b35c', '#4f0205', '#a46e51', '#6e6456', '#dd660d', '#3d5d44',  '#5b8a72', '#7a5429', '#5f3f36', '#d1a85c', '#8f6b3e', '#ff920d', '#be9c69']
+    # custom_palette = ['#dd660d', '#4f0205', '#a46e51', '#6e6456', '#5b8a72', '#3d5d44',  '#ff920d', '#7a5429', '#5f3f36', '#d1a85c', '#8f6b3e', '#a7b35c', '#be9c69']
 
     # Use the custom palette in your color map
     num_groups = len(grouped_states_df['group'].unique())
     color_map = {f'Group {idx + 1}': custom_palette[idx % len(custom_palette)] for idx in range(num_groups)}
-    color_map['No Group'] = 'grey'
+    color_map['No Group'] = 'white'
 
     fig = px.choropleth(
         grouped_states_df, 
@@ -51,7 +48,7 @@ def draw_map(state_groups, final_cohen_df):
 
 
     fig.update_layout(
-        title_text = 'State Groups by Cohen\'s d',
+        title_text = 'Custom regions based on beer ratings tendencies',
         geo_scope='usa',
         width=700,  # Adjust width
         height=500,  # Adjust height

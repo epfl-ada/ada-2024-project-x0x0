@@ -1,4 +1,4 @@
-from utils.prepNLP import prepare_state_data, create_nlp_doc
+from src.questions.sentimentAnalysis.utils.prepNLP import prepare_state_data, create_nlp_doc
 
 import pandas as pd
 import matplotlib.pyplot as plt

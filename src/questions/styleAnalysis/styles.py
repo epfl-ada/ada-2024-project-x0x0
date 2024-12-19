@@ -1,9 +1,9 @@
 import pandas as pd
 
-from utils.styleHeatmap import number_of_ratings_heatmap, ratings_heatmap
-from utils.simpleWeights import simple_top_style, simple_2nd_top_style
-from utils.logWeights import log_top_styles
-from utils.drawMap import draw_map
+from src.questions.styleAnalysis.utils.styleHeatmap import number_of_ratings_heatmap, ratings_heatmap
+from src.questions.styleAnalysis.utils.simpleWeights import simple_top_style, simple_2nd_top_style
+from src.questions.styleAnalysis.utils.logWeights import log_top_styles
+from src.questions.styleAnalysis.utils.drawMap import draw_map
 
 
 def analyseStyles(state_style_stats):

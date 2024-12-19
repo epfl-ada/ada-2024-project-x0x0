@@ -3,7 +3,8 @@ from scipy.stats import chi2_contingency
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-
+from matplotlib.colors import Normalize, LinearSegmentedColormap
+from matplotlib.cm import ScalarMappable
 
 #seperating this function so i can run it just based off of saved csv data
 def NLP_chi_test(df_stats_local, df_stats_nonlocal, state, print = False):
@@ -57,7 +58,7 @@ def plot_stacked_sentiments(df_local, df_nonlocal):
     
     plot_data.plot(
         kind='bar', stacked=True, figsize=(16, 8),
-        color=['#1f77b4', '#ff7f0e', '#2ca02c'], edgecolor='black'
+        color=['#a7b35c', '#4f0205', '#d1a85c'], edgecolor='black'
     )
 
     plt.title('Stacked Sentiment Analysis for Local and Nonlocal Reviews')
@@ -73,11 +74,23 @@ def plot_stacked_sentiments(df_local, df_nonlocal):
 def plot_chi_results(df_results):
 
     plt.figure(figsize=(16, 12))
-        
+    
+    custom_colors = ['#1e0f0d', '#6e4b3c', '#f2a900', '#f8d53f']
+    custom_cmap = LinearSegmentedColormap.from_list("custom_cmap", custom_colors)
+
+    state_mapping = {state: i for i, state in enumerate(df_results['state'])}
+    numeric_states = df_results['state'].map(state_mapping)
+
+    norm = Normalize(vmin=min(numeric_states), vmax=max(numeric_states))
+    sm = ScalarMappable(norm=norm, cmap=custom_cmap)
+    colors = [sm.to_rgba(v) for v in numeric_states]
+
     sns.barplot(
         x='state', y='cramers_v', data=df_results, 
-        palette='viridis'
+        palette=colors
     )
+    
+    sm.set_array([])
     
     # Add p-value as text annotation
     for idx, row in df_results.iterrows():

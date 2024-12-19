@@ -2,6 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from matplotlib.colors import Normalize, LinearSegmentedColormap
+from matplotlib.cm import ScalarMappable
 
 from src.questions.question3.utils.cohenD import cohen_d
 
@@ -37,14 +39,24 @@ def state_cohen_D(df_US_ratings: pd.DataFrame):
 
     cohen_df = cohen_df.dropna()
 
+    custom_colors = ['#1e0f0d', '#6e4b3c', '#f2a900', '#f8d53f']
+    custom_cmap = LinearSegmentedColormap.from_list("custom_cmap", custom_colors)
+
+    values = cohen_df['Cohen_d']
+    norm = Normalize(vmin=min(values), vmax=max(values))
+    sm = ScalarMappable(norm=norm, cmap=custom_cmap)
+    colors = [sm.to_rgba(v) for v in values]
+
     plt.figure(figsize=(12, 8))
 
     sns.barplot(
         x=cohen_df.index, 
         y='Cohen_d', 
         data=cohen_df, 
-        palette='viridis'
+        palette= colors
+
     )
+    
 
     plt.axhline(y=0, color='black', linewidth=1)
 
@@ -94,7 +106,7 @@ def state_distribution(cohen_df, US_ratings):
     )
 
     # Add scatter points for averages
-    colors = {'In-State': 'blue', 'Out-of-State': 'orange'}
+    colors = {'In-State': '#5b8a72', 'Out-of-State': 'orange'}
     labels_added = set()  
 
     for i, state in enumerate(significant_states):
@@ -129,7 +141,7 @@ def state_distribution(cohen_df, US_ratings):
     # Merge and deduplicate legends
     lines, labels = ax.get_legend_handles_labels()
     unique_labels = dict(zip(labels, lines))  # Remove duplicate labels
-    ax.legend(unique_labels.values(), unique_labels.keys(), title='Reviewer Type & Averages', loc='upper right')
+    ax.legend(unique_labels.values(), unique_labels.keys(), title='Reviewer Type & Averages', loc='lower right')
 
     plt.tight_layout()
     plt.show()

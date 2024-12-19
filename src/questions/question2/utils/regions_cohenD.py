@@ -9,7 +9,9 @@ import seaborn as sns
 def regions_cohenD(neighbours_df, US_ratings, plot=True):
     
     df_neighbours = neighbours_df
-    df_neighbours["neighbours"] = df_neighbours["neighbours"].fillna("").str.split(";")
+    #df_neighbours["neighbours"] = df_neighbours["neighbours"].fillna("").str.split(";")
+    df_neighbours["neighbours"] = df_neighbours["neighbours"].fillna("").apply(lambda x: x.split(";") if isinstance(x, str) and x else [])
+
     cohen_results_by_region = {}
     
     for index, row in df_neighbours.iterrows():
