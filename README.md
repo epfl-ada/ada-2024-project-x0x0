@@ -17,7 +17,7 @@ Countries often claim that they have the “best” beer, we aim to analyse the 
 
 -If we cluster beers by rating and state of origin, will we see the same trend where people from a state prefer their own beers?
 
-## Additional Datasets
+## Additional Dataset
 
 Geographical Data: States’ bordering states
 
@@ -80,3 +80,8 @@ Thomas : Data modularisation, geographical maps visulisation of create "custom r
 Helene: Beer style analysis and website repository organisation
 Alex: statistical method suggestions and reviews clustering
 Iarantsoa: Parameter/feature selection and graph analysis. Additional clustering analysis
+
+
+## Our data story
+Below is the link to our website which will take you through the journey of our data story
+
