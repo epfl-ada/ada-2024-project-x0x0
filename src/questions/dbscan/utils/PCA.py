@@ -9,7 +9,6 @@ from sklearn.preprocessing import RobustScaler
 
 
 
-
 def plot_vars(US_knn_text):
     
     columns_to_drop = ['beer_name', 'beer_id','brewery_name','avg','user_state', 'beer_state', 'text']
@@ -68,6 +67,38 @@ def plot_vars(US_knn_text):
     plt.title('Cumulative Explained Variance')
     plt.xlabel('Principal Components')
     plt.ylabel('Cumulative Explained Variance')
+    plt.show()
+    
+    return X_pca_df, X_scaled
+
+
+
+
+def PCA_visualise(X_scaled):
+    
+    features = X_scaled.drop(columns=['cluster_Kmeans', 'cluster_DBSCAN'])
+    pca = PCA(n_components=2, random_state=42)
+    principal_components = pca.fit_transform(features)
+    pca_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
+
+    # KMeans PCA Visualization
+    pca_df['Cluster'] = X_scaled['cluster_Kmeans']
+    plt.figure(figsize=(10, 8))
+    sns.scatterplot(x='PC1', y='PC2', hue='Cluster', palette='viridis', data=pca_df, alpha=0.6)
+    plt.title('Clusters Visualized with PCA (KMeans)')
+    plt.xlabel('Principal Component 1')
+    plt.ylabel('Principal Component 2')
+    plt.legend(title='Cluster')
+    plt.show()
+
+    # DBSCAN PCA Visualization
+    pca_df['Cluster'] = X_scaled['cluster_DBSCAN']
+    plt.figure(figsize=(10, 8))
+    sns.scatterplot(x='PC1', y='PC2', hue='Cluster', palette='tab10', data=pca_df, alpha=0.6, legend = False)
+    plt.title('Clusters Visualized with PCA (DBSCAN)')
+    plt.xlabel('Principal Component 1')
+    plt.ylabel('Principal Component 2')
+    plt.legend(title='Cluster')
     plt.show()
     
     return
