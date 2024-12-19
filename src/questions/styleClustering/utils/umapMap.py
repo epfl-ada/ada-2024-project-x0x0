@@ -45,8 +45,8 @@ def draw_umap_map(df_cleaned):
 
     fig.update_layout(
         geo_scope='usa',
-        width=900,
-        height=600,  
+        width=700,
+        height=500,  
         title_font=dict(size=20),
         geo=dict(projection_type="albers usa")
     )
