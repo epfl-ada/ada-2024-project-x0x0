@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-from utils.cohenD import cohen_d
+from src.questions.sentimentAnalysis.utils.cohenD import cohen_d
 import gzip
 import pickle
 

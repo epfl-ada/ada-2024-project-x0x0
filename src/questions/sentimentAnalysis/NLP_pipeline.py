@@ -1,6 +1,6 @@
-from utils.sentimentAnalysis import sentiment_analysis_results
-from utils.NLP_chi_test import NLP_chi_test, plot_chi_results, plot_stacked_sentiments
-from utils.NLP_cohenD import NLP_cohen_D_all_states
+from src.questions.sentimentAnalysis.utils.sentimentAnalysis import sentiment_analysis_results
+from src.questions.sentimentAnalysis.utils.NLP_chi_test import NLP_chi_test, plot_chi_results, plot_stacked_sentiments
+from src.questions.sentimentAnalysis.utils.NLP_cohenD import NLP_cohen_D_all_states
 import pandas as pd
 import numpy as np
 import os
