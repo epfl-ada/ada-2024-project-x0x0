@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.questions.question1.utils.q1prepData import prep_data
+from src.questions.question1.utils.q1prepData import q1prep_data
 from src.questions.question1.utils.basicPlots import region_avg_scatter, region_avg_violin, plot_cohenD
 from src.questions.question1.utils.buildGroups import build_groups
 from src.questions.question1.utils.map import draw_map
@@ -9,7 +9,7 @@ from src.questions.question1.utils.map import draw_map
 
 def regional_analysis(US_ratings, neighbours_df, plot = False):
     
-    ratings_df = prep_data(US_ratings, neighbours_df)
+    ratings_df = q1prep_data(US_ratings, neighbours_df)
     
     #region_avg_scatter(ratings_df)
     #region_avg_violin(ratings_df)

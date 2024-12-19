@@ -12,7 +12,7 @@ def plot_users(users):
     user_counts = user_counts.sort_values(by='total_users', ascending=False)
     user_counts['color'] = user_counts['location'].apply(lambda x: 'red' if x.startswith('United States,') else 'blue')
 
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(8, 5))
     plt.bar(user_counts['location'], user_counts['total_users'], color=user_counts['color'], )
     plt.xlabel('Location')
     plt.ylabel('Total Users')

@@ -9,7 +9,7 @@ def plot_beer_breweries_distribution(breweries: pd.DataFrame):
         total_beers=('nbr_beers', 'sum')
     ).reset_index().sort_values(by='total_beers', ascending=False)
 
-    fig, ax1 = plt.subplots(figsize=(12, 8))
+    fig, ax1 = plt.subplots(figsize=(8, 5))
 
     #total beers
     ax1.bar(country_stats['location'], country_stats['total_beers'], 

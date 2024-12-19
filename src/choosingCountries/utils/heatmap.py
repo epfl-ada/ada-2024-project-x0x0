@@ -10,7 +10,7 @@ def heatmap_avg_ratings(US_ratings):
     #create matrix which gives the avg rating of each beers of state to user of state combination pair
     state_ratings_matrix = state_ratings.pivot_table(index='user_state', columns='beer_state', values='avg', fill_value=0)
 
-    plt.figure(figsize=(12, 12))
+    plt.figure(figsize=(10, 10))
 
     sns.heatmap(state_ratings_matrix, annot=False, fmt=".2f", cmap='viridis', linewidths=0.5, cbar_kws={'label': 'Average Rating'}, square=True)
 

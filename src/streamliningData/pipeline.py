@@ -18,7 +18,7 @@ def verify_and_create_directory(directory_path):
     else:
         print(f"The directory already exists: {directory_path}")
 
-#I found this logger code online in github issue post, it works to suppress what I want
+#I found this logger code online in github issue post, I modified it and it works to suppress what I want
 class PapermillFilter(logging.Filter):
     def filter(self, record):
         #suppress these annoying console logs
@@ -31,9 +31,7 @@ handler = logging.StreamHandler()
 handler.addFilter(PapermillFilter())  # Apply our filter
 logger.addHandler(handler)
 
-# List your notebook files here
-
-'''
+#like this we can control exaclty what we need to run, sometimes we only need a part of  the pipeline
 notebook_paths = [
     'src/streamliningData/utils/reducing_csv.ipynb',
     'src/streamliningData/utils/BA_reducing_txt.ipynb',
@@ -42,19 +40,16 @@ notebook_paths = [
     'src/streamliningData/utils/RB_extra_cols.ipynb',
     'src/streamliningData/utils/BA_US_data.ipynb',
     'src/streamliningData/utils/RB_US_data.ipynb',
-    #add extract_php.ipynb
-]
-'''
-
-notebook_paths = [
     'src/streamliningData/utils/BA_knn_txt.ipynb',
     'src/streamliningData/utils/BA_knn_extra_cols.ipynb',
     'src/streamliningData/utils/BA_US_knn_text.ipynb',
     'src/streamliningData/utils/RB_knn_txt.ipynb',
     'src/streamliningData/utils/RB_knn_extra_cols.ipynb',
-    'src/streamliningData/utils/RB_US_knn_text.ipynb'
+    'src/streamliningData/utils/RB_US_knn_text.ipynb',
+    #add extract_php.ipynb
 ]
 
+#base data you need to have
 files_to_check = [
     'data/baseData/BeerAdvocate/beers.csv',
     'data/baseData/BeerAdvocate/breweries.csv',
@@ -86,7 +81,7 @@ for directory in directories_to_check:
     else:
         print(f"Directory '{directory}' exists.")
 
-print('\nIt takes around 12 minutes to run everything \n')
+print('\nIt takes around 20 minutes to run everything \n')
 
 for notebook in notebook_paths:
     pm.execute_notebook(

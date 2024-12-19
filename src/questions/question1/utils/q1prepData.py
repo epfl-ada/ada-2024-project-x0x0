@@ -3,12 +3,10 @@ import numpy as np
 
 
 
-def prep_data(US_ratings, df_neighbours):
+def q1prep_data(US_ratings, df_neighbours):
     
-    #neighbours_df["neighbours"] = neighbours_df["neighbours"].fillna("").apply(lambda x: x.split(";") if x else [])
-    #these should be the same but check
     neighbours_df = df_neighbours
-    neighbours_df["neighbours"] = df_neighbours["neighbours"].fillna("").str.split(";")
+    neighbours_df["neighbours"] = neighbours_df["neighbours"].fillna("").apply(lambda x: x.split(";") if x else [])
     
     states = US_ratings['beer_state'].unique()
 

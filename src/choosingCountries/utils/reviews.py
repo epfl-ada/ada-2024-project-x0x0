@@ -26,7 +26,7 @@ def plot_reviews(breweries, BA_merged):
 
     country_data = country_data.sort_values(by='local_reviews', ascending=False)
 
-    fig, ax = plt.subplots(figsize=(12, 8))
+    fig, ax = plt.subplots(figsize=(10, 8))
 
     #Identify states that are in the US
     highlighted = country_data['location'].str.startswith('United States')
