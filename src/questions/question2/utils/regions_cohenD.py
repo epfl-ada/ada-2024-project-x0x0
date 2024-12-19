@@ -6,7 +6,10 @@ import seaborn as sns
 
 
 
-def regions_cohenD(df_neighbours, US_ratings, plot=True):
+def regions_cohenD(neighbours_df, US_ratings, plot=True):
+    
+    df_neighbours = neighbours_df
+    df_neighbours["neighbours"] = df_neighbours["neighbours"].fillna("").str.split(";")
     cohen_results_by_region = {}
     
     for index, row in df_neighbours.iterrows():
