@@ -32,3 +32,5 @@ def perform_clustering(df_pca, states):
     # Print the states in each cluster
     for cluster, states in states_in_clusters.items():
         print(f"Cluster {cluster}: {states}")
+
+    return

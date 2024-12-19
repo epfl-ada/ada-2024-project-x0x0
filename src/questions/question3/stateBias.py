@@ -9,11 +9,13 @@ def state_bias(US_ratings):
     
     ratings_comparison = weighted_ratings(US_ratings)
 
-    state_scatter_plot(ratings_comparison)
+    #state_scatter_plot(ratings_comparison)
 
     df_cohenD = state_cohen_D(US_ratings)
 
     state_distribution(df_cohenD, US_ratings)
+    
+    return
     
 
 if __name__ == "__main__":  

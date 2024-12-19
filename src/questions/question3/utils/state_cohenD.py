@@ -70,73 +70,68 @@ def state_cohen_D(df_US_ratings: pd.DataFrame):
 
 
 def state_distribution(cohen_df, US_ratings):
+    
     significant_states = cohen_df[
         (cohen_df['Cohen_d'] > 0.2) | (cohen_df['Cohen_d'] < -0.2)
     ].index
     significant_states = sorted(significant_states)
 
     filtered_ratings = US_ratings[US_ratings['beer_state'].isin(significant_states)]
-
     average_ratings = filtered_ratings.groupby(['beer_state', 'state_IN_VS_OUT'])['rating'].mean().reset_index()
-
+    
     plt.figure(figsize=(12, 8))
 
-    ax1 = sns.violinplot(
+    # Plot violin plot
+    ax = sns.violinplot(
         x='beer_state', 
         y='rating', 
         hue='state_IN_VS_OUT', 
         data=filtered_ratings, 
         split=True, 
         inner=None, 
-        palette='Set2'
+        palette='Set2',
+        cut=0
     )
 
-    ax1.legend_.remove()
-
-    ax1.set_xlabel('State')
-    ax1.set_ylabel('Rating Distribution')
-    ax1.set_title('Ratings Distribution and Average Ratings for States with |Cohen’s D| > 0.2')
-
-    ax2 = ax1.twinx()
-
+    # Add scatter points for averages
     colors = {'In-State': 'blue', 'Out-of-State': 'orange'}
-
     labels_added = set()  
 
     for i, state in enumerate(significant_states):
         state_avg_ratings = average_ratings[average_ratings['beer_state'] == state]
-        
         for relation, color in colors.items():
             avg_value = state_avg_ratings[state_avg_ratings['state_IN_VS_OUT'] == relation]['rating']
             if not avg_value.empty:
-                x_pos = i  # Position at the state's index
                 offset = -0.2 if relation == 'In-State' else 0.2
                 label = f'{relation} Average' if f'{relation} Average' not in labels_added else None
-                
-                ax2.scatter(x_pos + offset, avg_value, 
-                            color=color, 
-                            edgecolor='black', 
-                            s=100, 
-                            zorder=3, 
-                            label=label)
+                plt.scatter(
+                    x=i + offset, 
+                    y=avg_value, 
+                    color=color, 
+                    edgecolor='black', 
+                    s=100, 
+                    zorder=3, 
+                    label=label
+                )
                 if label is not None:
                     labels_added.add(label)
 
-    ax2.set_ylabel('Average Rating')
+    # Set axis limits and labels
+    ax.set_xlabel('State')
+    ax.set_ylabel('Rating')
+    ax.set_ylim(0, 5)  # Set y-axis limits
+    ax.set_title('Ratings Distribution and Average Ratings for States with |Cohen’s D| > 0.2')
 
-    ax1.set_xticks(range(len(significant_states)))  
-    ax1.set_xticklabels(significant_states, rotation=90)  
+    # Customize x-axis
+    ax.set_xticks(range(len(significant_states)))
+    ax.set_xticklabels(significant_states, rotation=90)
 
-    lines_1, labels_1 = ax1.get_legend_handles_labels()
-    lines_2, labels_2 = ax2.get_legend_handles_labels()
-
-    lines_combined, labels_combined = [], []
-    for l, la in zip(lines_1 + lines_2, labels_1 + labels_2):
-        if la not in labels_combined:
-            lines_combined.append(l)
-            labels_combined.append(la)
-
-    ax1.legend(lines_combined, labels_combined, title='Reviewer Type & Averages', loc='upper right')
+    # Merge and deduplicate legends
+    lines, labels = ax.get_legend_handles_labels()
+    unique_labels = dict(zip(labels, lines))  # Remove duplicate labels
+    ax.legend(unique_labels.values(), unique_labels.keys(), title='Reviewer Type & Averages', loc='upper right')
 
     plt.tight_layout()
     plt.show()
+    
+    return
