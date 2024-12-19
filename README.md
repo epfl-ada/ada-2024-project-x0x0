@@ -1,14 +1,8 @@
-# Exploring Geographical Bias in Beer Ratings: ": Is Your State Swaying Your Sip?"
+# Exploring Geographical Bias in Beer Taste in the US : Is your State swaying you Sip?
 
 **Abstract**
 
-Beer, the most common alcoholic beverage. Grabbing a beer has become one of the world’s favorite pastimes. It is a chance to get together amongst friends, decompress with colleagues after work. MAYBE ADD MORE
-From America’s prohibition era to the current globalisation of the beer market, the choice of beer in a bar has never been so varied. The choice one makes when ordering a beer has never highlighted internal bias as much as now. 
-
-The strong economic competition gives way to a cut-throat rivalry. Each brewery wants to sell more, be the best, especially if they sell beer in the same location. Can beers that come from far away compete with the regional preference people might have?
-It’s a claim we hear all the time: regions boasting about having the “best” beer. But what if there’s more to it than just national pride? What if the state you call home influences how you taste beer? What if your national pride is ingrained in your beer preferences? In this investigation, we dive deep into the beer preferences of Americans. 
-
-This lead us to our question at hand: Do people from different states have a bias for their own beers? To crack the case, we’ll begin by examining the geography of beer preferences through the lens of U.S. states. Inspired by the idea that people from certain regions of the world share similar food tastes, we’ll analyze regional beer preferences, comparing neighboring states and even the way different beer styles shape the ratings by state. Join us as we sift through the data to uncover hidden trends and discover the reasons behind these regional biases. Could the answers be hiding in plain sight? Let’s investigate and find out.
+Countries often claim that they have the “best” beer, we aim to analyse the US and see if we can quantify a bias that people from different states have for each other's beers. Does the state you are from influence your beer preferences, especially towards beers coming from your own state? More generally, by examining the data from the Beer Advocate beer review website, we aim to uncover links between a user's geographical location, and how they rate beers. We were inspired by different regions of the world having similar food, so to try and find trends in beer data we’re going to start with a ‘regional’ analysis of states. Additionally, we will attempt to explain and find reasons for the bias in preference by looking at various factors, such comparing specifically neighbouring states, or analysing differences in beer style preferences.
 
 
 **Research questions**
@@ -23,7 +17,7 @@ This lead us to our question at hand: Do people from different states have a bia
 
 -If we cluster beers by rating and state of origin, will we see the same trend where people from a state prefer their own beers?
 
-## Proposed Additional Datasets
+## Additional Datasets
 
 Geographical Data: States’ bordering states
 
@@ -47,7 +41,7 @@ After considering what we would need for our project, we removed unnecessary dat
 
 Adding additional geographical data (neighbours) to aid our analyses on geographical proximity of the different locations
 
-Note: We are focussing on the US, as looking at BA data, the majority of it is US based data, and even in RB nearly a third of the data is US based. We still end up with dataframes millions of lines only, so we feel as though we have enough data for analysis. We will compare the results obtained in both datasets.
+Note: We are focussing on the US, as looking at BA data, the majority of it is US based data. We still end up with dataframes millions of lines only, so we feel as though we have enough data for analysis even by limiting our data to the US data in BA, we have enough data to make reasonable conclusions. 
 
 ### Part 2: Is there bias and why is there bias?
 
@@ -57,9 +51,12 @@ Our dataset is very large, in the millions of data points, making t-testing or e
 
 We define a region as a state and its neighbouring states. Within these regions, do the individual states like each other’s beer? To test this, we are comparing the distribution of the ratings of beers coming from each state to each other, and using Cohen’s D to test effect size. We are only comparing ratings when beers and users come from the region. We would hope to see that most regions have  low Cohen’s D so we can reject the notion that their distributions are significantly different. In this part we also aim to define regions of the US which are states that tend to rate beers more similarly.
 
+
 *Question 2:*
 
-Looking specifically at the custom ‘regions’ discovered in question 1, do we see differences between beer ratings? Do regions have higher average ratings for their beer compared to outside reviewers? Do regions rate beers coming from outside countries lower than local beers? To test this we use our previously constructed regions, and compare them with each other (Cohen’s D) to see if there are differences in the way they rate their own region’s beers, or coming from an outside region. We would like to see that regions prefer their own beer while disliking other regions' beer.
+Looking specifically at the custom ‘regions’ obtained in question 1, do we see differences between beer ratings? Do regions have higher average ratings for their beer compared to outside reviewers? Do regions rate beers coming from outside countries lower than local beers? To test this we use our previously constructed regions, and compare them with each other to see if there are differences in the way they rate their own region’s beers, or coming from an outside region. We would like to see that regions prefer their own beer while disliking other regions' beer.
+
+Results: 
 
 *Question 3:*
 
@@ -73,38 +70,13 @@ Style preferences are masked by the general popularity of certain beer styles in
 
 *Question 5:*
 
-If we cluster beers by rating and state of origin, will we see the same trend where people from a state prefer their own beers? We would like to see similar trends as in questions 1-3, and we can recover similar biases, for example, for a cluster of California beers, do the high reviews originate from California?
-
-## Proposed Timeline
-
-17/11/24 Finish data Handling and Preprocessing & Initial Data Exploration
-
-1/12/24 Finish Questions 1-5 Implementation
-
-8/12/24 Finish final analyses
-
-15/12/24 Write report
-
-20/12/24 Milestone 3 Deadline
-
-## Team organization
-
-Enzo: Preprocessing pipeline and exploratory data
-
-Thomas + Enzo: code modularisation + file management
-
-Question 1: Thomas- large scale Cohen's D analysis + custom region definitions
-
-Question 2: Helene/Alexandra - custom region ratings exploration
-
-Question 3: Iarantsoa / Alexandra - state by state specific rating bias exploration
-
-Question 4a: Helene- preliminary beer style preference analysis
-
-Question 4b: Enzo/ Iarantsoa- style specific parameters and cluster exploration
-
-Question 5a: Iarantsoa - parameter selection
-
-Question 5b: Alex - reviews clustering to explore any geographical links
+If we cluster all the US reviews based on a variety of parameters that allow us to distinguish between the beers in question, such as taste, aroma, appearance etc, are we able to find clusters that have geographical state dependencies? In the clusters that we are able to form, are there hidden patterns that reveal groupings of reviews originating from users of the same state in certain clusters? And are these these clusters geographically relavant?
 
 
+
+## Group organisation
+Enzo: Preliminary data analysis and overall code pipline. Providing cleaned datasets for future analyis and data modularisation
+Thomas : Data modularisation, geographical maps visulisation of create "custom regions"
+Helene: Beer style analysis and website repository organisation
+Alex: statistical method suggestions and reviews clustering
+Iarantsoa: Parameter/feature selection and graph analysis. Additional clustering analysis
