@@ -33,11 +33,13 @@ def regions_cohenD_interactive(df_neighbours, US_ratings, plot=True):
     cohen_by_region_df = cohen_by_region_df.sort_values(by='Cohen_d', ascending=False)
 
     if plot:
+        colour_scale = ['#1e0f0d', '#6e4b3c', '#f2a900', '#f8d53f']
+
         fig = px.bar(cohen_by_region_df,
                      x='Center State of each Region',
                      y='Cohen_d',
                      color='Cohen_d',
-                     color_continuous_scale='Viridis',
+                     color_continuous_scale=colour_scale,
                      title="Cohen's D for In-Region Ratings Compared to Out-of-Region Ratings",
                      labels={'Cohen_d': "Cohen's D Value", 'Center State of each Region': 'Region Group'})
 
@@ -88,5 +90,3 @@ def regions_cohenD_interactive(df_neighbours, US_ratings, plot=True):
         fig.write_html(os.path.join(directory, "neighbours_regions_cohend.html"))
 
     return cohen_by_region_df
-
-   

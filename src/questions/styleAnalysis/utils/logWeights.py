@@ -21,8 +21,10 @@ def log_top_styles(state_style_stats):
     # top beer style per state based on normalized weight
     top_style_per_state = state_style_stats_thresh.groupby('user_state').apply(lambda x: x.loc[x['normalized_weight'].idxmax()]).reset_index(drop=True)
 
+    color_palette=['#a7b35c', '#4f0205', '#d1a85c']
+
     plt.figure(figsize=(18, 12))
-    sns.barplot(data=top_style_per_state, x='user_state', y='normalized_weight', hue='style')
+    sns.barplot(data=top_style_per_state, x='user_state', y='normalized_weight', hue='style', palette=color_palette)
     
     plt.title("Top Beer Style with Highest Normalized Weight per State", fontsize=16)
     plt.xticks(rotation=90)
