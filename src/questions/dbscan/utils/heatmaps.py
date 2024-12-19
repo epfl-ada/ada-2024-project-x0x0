@@ -15,6 +15,7 @@ from matplotlib.colors import ListedColormap
 import seaborn as sns
 import plotly.express as px
 from matplotlib.colors import to_hex
+import plotly.io as pio
 
 
 def plot_heatmaps(US_knn_text):
