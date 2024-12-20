@@ -48,6 +48,7 @@ def build_groups(final_cohen_df):  #from plot_cohen_d
         print(f"States: {states}")
         print("-" * 50)
 
+    print('\n\n')
     double_check(state_groups)
 
     return state_groups

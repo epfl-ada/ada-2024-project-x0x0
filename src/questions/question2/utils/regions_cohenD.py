@@ -3,6 +3,7 @@ from src.questions.question2.utils.cohenD import cohen_d
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import plotly.express as px
 
 
 
@@ -60,3 +61,89 @@ def regions_cohenD(neighbours_df, US_ratings, plot=True):
         
     return cohen_by_region_df
 
+def regions_cohenD_Q1_plotly(US_ratings, state_groups_df, plot=True):
+    cohen_results_by_region = {}
+    group_states = {}
+
+    for index, row in state_groups_df.iterrows():
+        group = row['States']
+        
+        # Store states in the group for hover info
+        group_states[index] = ", ".join(group)
+
+        # Get in-region and out-of-region ratings
+        in_region_ratings = US_ratings[US_ratings['user_state'].isin(group)]['rating']
+        out_of_region_ratings = US_ratings[~US_ratings['user_state'].isin(group)]['rating']
+
+        if len(in_region_ratings) < 2 or len(out_of_region_ratings) < 2:
+            print("Warning: Insufficient data, setting Cohen's d to NaN for group", index)
+            cohen_results_by_region[index] = np.nan
+            continue
+
+        # Compute Cohen's d
+        d_value = cohen_d(in_region_ratings, out_of_region_ratings)
+        cohen_results_by_region[index] = d_value
+
+    # Create a DataFrame with Cohen's d results
+    cohen_by_region_df = pd.DataFrame.from_dict(cohen_results_by_region, orient='index', columns=['Cohen_d'])
+    cohen_by_region_df.index.name = 'Group name'
+    cohen_by_region_df = cohen_by_region_df.reset_index()
+
+    # Add hover text with states in each group
+    cohen_by_region_df['Group States'] = cohen_by_region_df['Group name'].map(group_states)
+    
+    cohen_by_region_df_sorted = cohen_by_region_df.sort_values(by='Cohen_d', ascending=True).reset_index(drop=True)
+    print(cohen_by_region_df_sorted.head())
+    
+    if plot:
+        colour_scale = ['#1e0f0d', '#6e4b3c', '#f2a900', '#f8d53f']
+
+        # Plot the bar chart with Plotly
+        fig = px.bar(
+            cohen_by_region_df_sorted,
+            x=cohen_by_region_df_sorted.index,
+            y="Cohen_d",
+            custom_data=["Group States"],
+            title="Cohen's D for in-region ratings compared to out-of-region ratings",
+        )
+        
+        # Add reference lines for small and medium effects
+        fig.add_hline(y=0, line_dash="solid", line_color="black")
+        fig.add_hline(y=0.2, line_dash="dot", line_color="#FFA07A", annotation_text="Small effect (d=0.2)", annotation_position="top left")
+        fig.add_hline(y=-0.2, line_dash="dot", line_color="#FFA07A")
+        fig.add_hline(y=0.5, line_dash="dot", line_color="#FF8C00", annotation_text="Medium effect (d=0.5)", annotation_position="top left")
+        fig.add_hline(y=-0.5, line_dash="dot", line_color="#FF8C00")
+        
+        
+        fig.update_traces(
+            hovertemplate="<b>States:</b> %{customdata[0]}<extra></extra>"
+        )
+        
+        fig.update_traces(
+            marker=dict(
+                color=cohen_by_region_df_sorted['Cohen_d'],  # Use Cohen_d values for coloring
+                colorscale=colour_scale,  # Viridis color scale
+                cmin=-0.2,  # Set minimum color scale value
+                cmax=0.2,   # Set maximum color scale value
+                colorbar=dict(
+                    title="Cohen's D",
+                    tickvals=[-0.2, 0, 0.2],  # Set the ticks on the color bar
+                    ticktext=["-0.2", "0", "0.2"]  # Set the corresponding text for each tick
+                )  
+            )
+        )
+
+        # Customize layout
+        fig.update_layout(
+            xaxis_title="Region Group",
+            yaxis_title="Cohen's D Value",
+            title_font=dict(size=20),
+            width=700,
+            height=450,
+            xaxis=dict(showticklabels=False),
+            yaxis=dict(range=[-0.6, 0.6])
+        )
+
+        fig.show()
+
+    return cohen_by_region_df
