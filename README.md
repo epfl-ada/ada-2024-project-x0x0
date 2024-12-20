@@ -72,11 +72,12 @@ If we cluster all the US reviews based on a variety of parameters that allow us 
 
 
 ## Group organisation
-Enzo: Preliminary data analysis and overall code pipline. Providing cleaned datasets for future analyis and data modularisation
-Thomas : Data modularisation, geographical maps visulisation of create "custom regions"  
-Helene: Beer style analysis and website repository organisation  
-Alex: statistical method suggestions and reviews clustering  
-Iarantsoa: Parameter/feature selection and graph analysis. Additional clustering analysis  
+
+- **Enzo**: Preliminary data analysis and overall code pipeline. Providing cleaned datasets for future analysis and data modularisation.  
+- **Thomas**: Data modularisation, geographical maps visualisation to create "custom regions".  
+- **Helene**: Beer style analysis and website repository organisation.  
+- **Alex**: Statistical method suggestions and reviews clustering.  
+- **Iarantsoa**: Parameter/feature selection and graph analysis. Additional clustering analysis.   
 
 
 ## Our data story
