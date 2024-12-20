@@ -30,6 +30,7 @@ def KNN_plots(df, X_pca_df):
     cluster_labels_kmeans = kmeans.fit_predict(X_scaled)
     X_scaled['cluster_Kmeans'] = cluster_labels_kmeans
 
+    print("Starting dbscan")
     #======================================
     #DBSCAN
     #======================================
@@ -38,6 +39,7 @@ def KNN_plots(df, X_pca_df):
     cluster_labels_DBSCAN = dbscan.fit_predict(X_scaled)
     X_scaled['cluster_DBSCAN'] = cluster_labels_DBSCAN
 
+    print("Finished dbscan")
 
     cluster_labels_df = X_scaled[['cluster_Kmeans', 'cluster_DBSCAN']].reset_index(drop=True)
     cluster_labels_df['user_id'] = df.loc[X_pca_df.index, 'user_id'].values
