@@ -15,7 +15,7 @@ Countries often claim that they have the “best” beer, we aim to analyse the 
 
 -Looking deeper into preferences, does separating by beer style reveal a style specific bias that could explain these differences in ratings? Could we find state specific trends on beer style prefereneces?
 
--If we cluster beers by rating and state of origin, will we see the same trend where people from a state prefer their own beers?
+- Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias? And do we see the same biases as before?
 
 ## Additional Dataset
 
