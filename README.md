@@ -7,13 +7,13 @@ Countries often claim that they have the “best” beer, we aim to analyse the 
 
 **Research questions**
 
--Do regions like the same kind of beer?
+- Do regions like the same kind of beer?
 
--Do we see significant differences between regions when comparing beer ratings?
+- Do we see significant differences between regions when comparing beer ratings?
 
--Looking at the state level, do we see more trends ? Does doing a sentiment analysis on the text reviews reveal similar trends ?
+- Looking at the state level, do we see more trends ? Does doing a sentiment analysis on the text reviews reveal similar trends ?
 
--Looking deeper into preferences, does separating by beer style reveal a style specific bias that could explain these differences in ratings? Could we find state specific trends on beer style prefereneces?
+- Looking deeper into preferences, does separating by beer style reveal a style specific bias that could explain these differences in ratings? Could we find state specific trends on beer style prefereneces?
 
 - Going the other way around, if we cluster beers by beer attributes and ratings, do we see regional bias? And do we see the same biases as before?
 
@@ -80,6 +80,5 @@ Iarantsoa: Parameter/feature selection and graph analysis. Additional clustering
 
 
 ## Our data story
-Below is the link to our website which will take you through the journey of our data story in more detail!
-
-
+Below is the link to our website which will take you through the journey of our data story in more detail! <br>
+Data story link: https://helenezablit.github.io/website-x0x0/ 
