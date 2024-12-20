@@ -22,7 +22,6 @@ def plot_heatmaps(US_knn_text):
     
     columns_to_drop = ['beer_name', 'beer_id','brewery_name','avg','user_state', 'beer_state', 'text']
 
-    # Drop the specified columns as well as dropping ratings with no text reviews
     X_drop_na = US_knn_text.dropna()
     X_drop = X_drop_na.drop(columns=columns_to_drop)
     y = US_knn_text['user_state']
@@ -32,11 +31,11 @@ def plot_heatmaps(US_knn_text):
     #frequency encode brewery_id and user_id
 
     X = pd.get_dummies(X, columns=['style'], prefix=['style'])
-    user_frequency = X['user_id'].value_counts() / len(X)  # Frequency of each user_id
+    user_frequency = X['user_id'].value_counts() / len(X)  
 
     #Map each user_id to its frequency
     X['user_id_encoded'] = X['user_id'].map(user_frequency)
-    brewery_frequency = X['brewery_id'].value_counts() / len(X)  # Frequency of each brewery_id
+    brewery_frequency = X['brewery_id'].value_counts() / len(X)
 
     #Map each brewery_id to its frequency
     X['brewery_id_encoded'] = X['brewery_id'].map(brewery_frequency)
@@ -241,7 +240,7 @@ def plot_heatmaps(US_knn_text):
         fig, ax = plt.subplots(1, 1, figsize=(12, 8))
         plot_gdf.plot(color=plot_gdf['color'], edgecolor='black', ax=ax)
         ax.set_title(title, fontsize=16)
-        ax.axis('off')  # Remove axes for a clean map
+        ax.axis('off')
         plt.show()
 
     #======================================

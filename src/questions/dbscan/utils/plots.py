@@ -60,8 +60,6 @@ def plot_distributions(US_data, X_scaled):
 
 
 def states_in_clusters(user_cluster_state_counts_t):
-    
-    #where is user_cluster_state_counts_t coming from?
     state_totals = user_cluster_state_counts_t.sum(axis=1)
 
     normalized_cluster_data = user_cluster_state_counts_t.div(state_totals, axis=0)
@@ -81,8 +79,7 @@ def plot_dbscan_2D_pca(X_scaled, cluster_labels): #cluster labels from dbscan
     principal_components = pca.fit_transform(features)
 
     pca_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
-    pca_df['Cluster'] = cluster_labels #ill just keep it like this for now
-    #ill ask them how the want to run the wwhole file to see how i integrate all the functions together
+    pca_df['Cluster'] = cluster_labels
 
     plt.figure(figsize=(10, 8))
     sns.scatterplot(

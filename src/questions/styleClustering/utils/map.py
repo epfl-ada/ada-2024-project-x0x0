@@ -5,9 +5,6 @@ import plotly.express as px
 
 
 def draw_map(state_groups):
-    #us_map_path = '../../USData/map/us_states_modified.shp'
-    #us_states_map = gpd.read_file(us_map_path)
-    
     grouped_states_df = to_group_number(state_groups)
     print(grouped_states_df.head(2))
     
@@ -30,11 +27,11 @@ def draw_map(state_groups):
     fig.update_layout(
         title_text = 'State clustered by beer style parameters',
         geo_scope='usa',
-        width=900,  # Adjust width
-        height=600,  # Adjust height
-        title_font=dict(size=20),  # Optional: Increase title font size
+        width=900,
+        height=600,
+        title_font=dict(size=20),
         geo=dict(
-            projection_type="albers usa"  # Optional: Adjust projection style if necessary
+            projection_type="albers usa"
         )
     )
 
@@ -64,7 +61,7 @@ def to_group_number(clustered_states):
         for state in states:
             state_to_group[state] = f'Group {cluster_num}'
 
-    all_states = set(state_to_abbr.keys())  # Get all states
+    all_states = set(state_to_abbr.keys())
     grouped_states = [{'state_name': state, 'group': state_to_group.get(state, 'No Group')} for state in all_states]
 
     grouped_states_df = pd.DataFrame(grouped_states)

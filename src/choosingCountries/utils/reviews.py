@@ -9,10 +9,8 @@ def plot_reviews(breweries, BA_merged):
 
     BA_merged_cleaned = BA_merged.dropna(subset=['user_location', 'beer_location'])
 
-    #Local reviews (reviews written by people from one country reviewing beers from that same location)
     local_ratings = BA_merged_cleaned[BA_merged_cleaned['user_location'] == BA_merged_cleaned['beer_location']].groupby('beer_location').size().reset_index(name='local_ratings')
 
-    #Non-local reviews (reviews written by people for beers from other location)
     non_local_ratings = BA_merged_cleaned[BA_merged_cleaned['user_location'] != BA_merged_cleaned['beer_location']].groupby('beer_location').size().reset_index(name='non_local_ratings')
 
     country_stats = breweries.groupby('location').agg(
@@ -33,7 +31,8 @@ def plot_reviews(breweries, BA_merged):
     #Identify states that are in the US
     highlighted = country_data['location'].str.startswith('United States')
 
-    #Plot for countries that are NOT 'United States' in blue
+
+    #Plot for countries that are NOT 'United States' in '#dd660d'
     scatter = ax.scatter(
         country_data.loc[~highlighted, 'local_ratings'],
         country_data.loc[~highlighted, 'non_local_ratings'],
@@ -44,7 +43,7 @@ def plot_reviews(breweries, BA_merged):
         label='Other Countries'
     )
 
-    #Plot for US states in red
+    #Plot for US states in '#5b8a72'
     scatter_us = ax.scatter(
         country_data.loc[highlighted, 'local_ratings'],
         country_data.loc[highlighted, 'non_local_ratings'],
@@ -55,12 +54,11 @@ def plot_reviews(breweries, BA_merged):
         label='United States'
     )
 
-    legend_size = 10  # This size is arbitrary but ensures uniformity
+    legend_size = 10
     legend_scatter_other = mlines.Line2D([], [], marker='o', color='w', markerfacecolor='#dd660d', markersize=legend_size, label='Other Countries', markeredgewidth=2)
     legend_scatter_us = mlines.Line2D([], [], marker='o', color='w', markerfacecolor='#5b8a72', markersize=legend_size, label='United States', markeredgewidth=2)
 
 
-    # Set plot labels and title
     ax.set_xlabel('Local Ratings')
     ax.set_xscale('log')
     ax.set_yscale('log')

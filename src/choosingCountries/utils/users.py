@@ -22,7 +22,7 @@ def plot_users(users):
     plt.legend(handles=[red_patch, blue_patch], bbox_to_anchor=(1, 1), frameon=False)
 
     plt.title('Total number of users by location (>100 users)')
-    plt.xticks([])  #remove x-tick labels for clarity
+    plt.xticks([])
     plt.tight_layout()
     plt.show()
     

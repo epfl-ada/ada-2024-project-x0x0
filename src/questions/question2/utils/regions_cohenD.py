@@ -24,8 +24,8 @@ def regions_cohenD(neighbours_df, US_ratings, plot=True):
         else:
             region_states = [state] #if a state doesn't have neighbours we consider it as a region (like Alaska and Hawaii)
 
-        in_region_ratings = US_ratings[US_ratings['user_state'].isin(region_states)]['rating'] #take only the ratings of states inside the region
-        out_of_region_ratings = US_ratings[~US_ratings['user_state'].isin(region_states)]['rating'] #take only the ratings of states outside the region
+        in_region_ratings = US_ratings[US_ratings['user_state'].isin(region_states)]['rating']
+        out_of_region_ratings = US_ratings[~US_ratings['user_state'].isin(region_states)]['rating']
 
         if len(in_region_ratings) < 2 or len(out_of_region_ratings) < 2: #in order to do correctly the cohen test
             print("Warning nan")
@@ -80,11 +80,9 @@ def regions_cohenD_Q1_plotly(US_ratings, state_groups_df, plot=True):
             cohen_results_by_region[index] = np.nan
             continue
 
-        # Compute Cohen's d
         d_value = cohen_d(in_region_ratings, out_of_region_ratings)
         cohen_results_by_region[index] = d_value
 
-    # Create a DataFrame with Cohen's d results
     cohen_by_region_df = pd.DataFrame.from_dict(cohen_results_by_region, orient='index', columns=['Cohen_d'])
     cohen_by_region_df.index.name = 'Group name'
     cohen_by_region_df = cohen_by_region_df.reset_index()
@@ -121,19 +119,18 @@ def regions_cohenD_Q1_plotly(US_ratings, state_groups_df, plot=True):
         
         fig.update_traces(
             marker=dict(
-                color=cohen_by_region_df_sorted['Cohen_d'],  # Use Cohen_d values for coloring
-                colorscale=colour_scale,  # Viridis color scale
-                cmin=-0.2,  # Set minimum color scale value
-                cmax=0.2,   # Set maximum color scale value
+                color=cohen_by_region_df_sorted['Cohen_d'],
+                colorscale=colour_scale,
+                cmin=-0.2,
+                cmax=0.2,
                 colorbar=dict(
                     title="Cohen's D",
-                    tickvals=[-0.2, 0, 0.2],  # Set the ticks on the color bar
-                    ticktext=["-0.2", "0", "0.2"]  # Set the corresponding text for each tick
+                    tickvals=[-0.2, 0, 0.2],
+                    ticktext=["-0.2", "0", "0.2"]
                 )  
             )
         )
 
-        # Customize layout
         fig.update_layout(
             xaxis_title="Region Group",
             yaxis_title="Cohen's D Value",

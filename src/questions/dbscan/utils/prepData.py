@@ -1,10 +1,8 @@
 import pandas as pd
 
+#we have more than enough data, so we can afford to just drop all instances of NaNs
 
-
-def prep_data(US_knn_text):
-    
-    #we have more than enough data, so we can afford to just drop all instances of NaNs
+def prep_data(US_knn_text):    
     X_drop_na = US_knn_text.dropna() #still have 1.8 mill data points... largely enough
 
     X_drop = X_drop_na.drop(columns = ['beer_name', 'beer_id','brewery_name',

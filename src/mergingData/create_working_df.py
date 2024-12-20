@@ -99,11 +99,11 @@ def merged_rating_beer(data_path):
     RBs_breweries = RBs_breweries.rename(columns={'id': 'brewery_id'}) # Change the name of the breweries id so that it can be associated to the beers
 
     ## Add locations to countries and beers
-    BAs_beers_loc = add_country(df_loc=BAs_breweries, df_no_loc=BAs_beers, identifier='brewery_id') # Add location to each beer
-    BAs_ratings_loc = add_country(df_loc=BAs_users, df_no_loc=BAs_ratings, identifier='user_id') # Add location to each rating
+    BAs_beers_loc = add_country(df_loc=BAs_breweries, df_no_loc=BAs_beers, identifier='brewery_id')
+    BAs_ratings_loc = add_country(df_loc=BAs_users, df_no_loc=BAs_ratings, identifier='user_id') 
 
-    RBs_beers_loc = add_country(df_loc=RBs_breweries, df_no_loc=RBs_beers, identifier='brewery_id') # Add location to each beer
-    RBs_ratings_loc = add_country(df_loc=RBs_users, df_no_loc=RBs_ratings, identifier='user_id') # Add location to each rating
+    RBs_beers_loc = add_country(df_loc=RBs_breweries, df_no_loc=RBs_beers, identifier='brewery_id') 
+    RBs_ratings_loc = add_country(df_loc=RBs_users, df_no_loc=RBs_ratings, identifier='user_id')
 
 
     ## Next modify the the location names to avoid confusion between beer_location and rating_location

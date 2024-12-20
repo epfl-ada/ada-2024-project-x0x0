@@ -131,7 +131,7 @@ def state_distribution(cohen_df, US_ratings):
     # Set axis limits and labels
     ax.set_xlabel('State')
     ax.set_ylabel('Rating')
-    ax.set_ylim(0, 5)  # Set y-axis limits
+    ax.set_ylim(0, 5)
     ax.set_title('Ratings Distribution and Average Ratings for States with |Cohen’s D| > 0.2')
 
     # Customize x-axis
@@ -140,7 +140,7 @@ def state_distribution(cohen_df, US_ratings):
 
     # Merge and deduplicate legends
     lines, labels = ax.get_legend_handles_labels()
-    unique_labels = dict(zip(labels, lines))  # Remove duplicate labels
+    unique_labels = dict(zip(labels, lines))
     ax.legend(unique_labels.values(), unique_labels.keys(), title='Reviewer Type & Averages', loc='lower right')
 
     plt.tight_layout()

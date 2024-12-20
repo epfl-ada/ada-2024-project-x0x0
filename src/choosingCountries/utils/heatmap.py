@@ -4,7 +4,6 @@ import seaborn as sns
 
 def heatmap_avg_ratings(US_ratings):
     
-    #Average rating of all users by state for all states
     state_ratings = US_ratings.groupby(['user_state', 'beer_state'])['avg'].mean().reset_index()
 
     #create matrix which gives the avg rating of each beers of state to user of state combination pair

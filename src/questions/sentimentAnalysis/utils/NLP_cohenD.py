@@ -79,6 +79,8 @@ def NLP_cohen_D_all_states(states, path_BA):
         
         df_cohen_all_states = pd.concat([df_cohen_all_states, df_cohen], ignore_index=True)
 
+    colour_palette = ['#4f0205', '#5b8a72', '#d1a85c']
+
     # Now, plot the results for all states
     plt.figure(figsize=(16, 12))
     
@@ -88,7 +90,7 @@ def NLP_cohen_D_all_states(states, path_BA):
         x='state', 
         y='value', 
         hue='variable', 
-        palette='viridis',
+        palette=colour_palette,
         dodge=True  
     )
 
