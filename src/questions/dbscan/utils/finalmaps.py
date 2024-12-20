@@ -2,40 +2,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering
-from sklearn.preprocessing import StandardScaler, RobustScaler, MinMaxScaler
-from sklearn.experimental import enable_iterative_imputer
-from sklearn.impute import SimpleImputer, KNNImputer, IterativeImputer
-from sklearn.metrics import silhouette_score
+from sklearn.cluster import KMeans, DBSCAN
+from sklearn.preprocessing import RobustScaler
 from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
-import umap
 import plotly.express as px
 import geopandas as gpd
-from mpl_toolkits.axes_grid1 import make_axes_locatable
 import ipywidgets as widgets
-from IPython.display import display, clear_output
-import plotly.colors as pc
-import os
-import plotly.graph_objects as go
+from IPython.display import display
 import plotly.io as pio
-from shapely.geometry import Polygon, MultiPolygon
-import subprocess
-from pathlib import Path
 from matplotlib.colors import to_hex
 
 
 
 def KNN_plots(df, X_pca_df):
-    #======================================
-    #SCALING
-    #======================================
 
-    #scaler = StandardScaler()
     scaler = RobustScaler()
-    #scaler = MinMaxScaler()
-    #you use this one if the iterative imputer is running
-    #X_scaled = pd.DataFrame(scaler.fit_transform(X_iter_imputed), columns=X_iter_imputed.columns)
+    
     X_scaled = pd.DataFrame(scaler.fit_transform(X_pca_df), columns=X_pca_df.columns)
 
 
@@ -43,7 +25,6 @@ def KNN_plots(df, X_pca_df):
     #K MEANS CLUSTERING
     #======================================
     optimal_k = 6
-    #kmeans = KMeans(n_clusters=optimal_k, random_state=42)
     X_scaled.columns = X_scaled.columns.astype(str)
     kmeans = KMeans(n_clusters=optimal_k, n_init=50, random_state=42)
     cluster_labels_kmeans = kmeans.fit_predict(X_scaled)
@@ -89,7 +70,6 @@ def KNN_plots(df, X_pca_df):
     principal_components = pca.fit_transform(features)
     pca_df = pd.DataFrame(data=principal_components, columns=['PC1', 'PC2'])
 
-    # KMeans PCA Visualization
     pca_df['Cluster'] = X_scaled['cluster_Kmeans']
     plt.figure(figsize=(10, 8))
     sns.scatterplot(x='PC1', y='PC2', hue='Cluster', palette='viridis', data=pca_df, alpha=0.6)
@@ -99,7 +79,6 @@ def KNN_plots(df, X_pca_df):
     plt.legend(title='Cluster')
     plt.show()
 
-    # DBSCAN PCA Visualization
     pca_df['Cluster'] = X_scaled['cluster_DBSCAN']
     plt.figure(figsize=(10, 8))
     sns.scatterplot(x='PC1', y='PC2', hue='Cluster', palette='tab10', data=pca_df, alpha=0.6, legend = False)
@@ -108,8 +87,6 @@ def KNN_plots(df, X_pca_df):
     plt.ylabel('Principal Component 2')
     plt.legend(title='Cluster')
     plt.show()
-
-
 
     pio.renderers.default = 'notebook_connected'
 
@@ -176,8 +153,6 @@ def KNN_plots(df, X_pca_df):
 
         plot_gdf['color'] = plot_gdf['cluster_idx'].map(color_mapping)
 
-        print(plot_gdf[['state', 'cluster_idx', 'color']].head())
-
         mainland = plot_gdf[~plot_gdf['state'].isin(['alaska', 'hawaii'])]
         alaska = plot_gdf[plot_gdf['state'] == 'alaska'].copy()
         hawaii = plot_gdf[plot_gdf['state'] == 'hawaii'].copy()
@@ -204,22 +179,6 @@ def KNN_plots(df, X_pca_df):
             hawaii_ax.axis('off')
 
         plt.show()
-        
-    #======================================
-    # FUNCTION TO PLOT USING PLOTLY
-    #======================================
-    def plot_static_map(plot_gdf, n_clusters, title):
-        colors = ['white'] + [to_hex(c) for c in sns.color_palette('husl', n_clusters)]
-
-        color_mapping = {idx: colors[idx] for idx in range(n_clusters + 1)}
-
-        plot_gdf['color'] = plot_gdf['cluster_idx'].map(color_mapping)
-
-        fig, ax = plt.subplots(1, 1, figsize=(12, 8))
-        plot_gdf.plot(color=plot_gdf['color'], edgecolor='black', ax=ax)
-        ax.set_title(title, fontsize=16)
-        ax.axis('off')  # Remove axes for a clean map
-        plt.show()
 
     #======================================
     # CREATE A SINGLE MAP FOR ALL KMEANS and DBSCAN CLUSTERS
@@ -231,7 +190,7 @@ def KNN_plots(df, X_pca_df):
     plot_gdf, n_clusters = prepare_plot_data(top_10_states_dbscan_lower, us_map)
     plot_with_insets(plot_gdf, n_clusters, "Top 10 States for All DBSCAN Clusters on One Map")
 
-
+    return
 
 
 
@@ -390,3 +349,5 @@ def clustering_and_visualization(df, X_pca_df, k_range=range(3, 11)):
     # Display widgets and initial map
     display(k_slider, output)
     update_map(k_slider.value)
+    
+    return

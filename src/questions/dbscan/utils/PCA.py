@@ -13,7 +13,7 @@ def plot_vars(US_knn_text):
     
     columns_to_drop = ['beer_name', 'beer_id','brewery_name','avg','user_state', 'beer_state', 'text']
 
-    # Drop the specified columns as well as dropping ratings with no text reviews
+
     X_drop_na = US_knn_text.dropna()
     X_drop = X_drop_na.drop(columns=columns_to_drop)
     y = US_knn_text['user_state']
@@ -23,11 +23,11 @@ def plot_vars(US_knn_text):
     #frequency encode brewery_id and user_id
 
     X = pd.get_dummies(X, columns=['style'], prefix=['style'])
-    user_frequency = X['user_id'].value_counts() / len(X)  # Frequency of each user_id
+    user_frequency = X['user_id'].value_counts() / len(X)  
 
     #Map each user_id to its frequency
     X['user_id_encoded'] = X['user_id'].map(user_frequency)
-    brewery_frequency = X['brewery_id'].value_counts() / len(X)  # Frequency of each brewery_id
+    brewery_frequency = X['brewery_id'].value_counts() / len(X)  
 
     #Map each brewery_id to its frequency
     X['brewery_id_encoded'] = X['brewery_id'].map(brewery_frequency)
@@ -47,11 +47,6 @@ def plot_vars(US_knn_text):
     pca = PCA(n_components=0.95)
     X_pca = pca.fit_transform(X_scaled)
     X_pca_df = pd.DataFrame(X_pca)
-
-
-    # Create a DataFrame of the PCA components
-    # Each column represents a principal component and each row corresponds to the feature contribution to that component
-    components_df = pd.DataFrame(pca.components_, columns=X_scaled.columns)
     
     plt.figure(figsize=(8, 6))
     sns.lineplot(x=range(1, len(pca.explained_variance_ratio_) + 1),
