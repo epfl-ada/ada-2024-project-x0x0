@@ -51,12 +51,9 @@ Our dataset is very large, in the millions of data points, making t-testing or e
 
 We define a region as a state and its neighbouring states. Within these regions, do the individual states like each other’s beer? To test this, we are comparing the distribution of the ratings of beers coming from each state to each other, and using Cohen’s D to test effect size. We are only comparing ratings when beers and users come from the region. We would hope to see that most regions have  low Cohen’s D so we can reject the notion that their distributions are significantly different. In this part we also aim to define regions of the US which are states that tend to rate beers more similarly.
 
-
 *Question 2:*
 
 Looking specifically at the custom ‘regions’ obtained in question 1, do we see differences between beer ratings? Do regions have higher average ratings for their beer compared to outside reviewers? Do regions rate beers coming from outside countries lower than local beers? To test this we use our previously constructed regions, and compare them with each other to see if there are differences in the way they rate their own region’s beers, or coming from an outside region. We would like to see that regions prefer their own beer while disliking other regions' beer.
-
-Results: 
 
 *Question 3:*
 
@@ -70,18 +67,19 @@ Style preferences are masked by the general popularity of certain beer styles in
 
 *Question 5:*
 
-If we cluster all the US reviews based on a variety of parameters that allow us to distinguish between the beers in question, such as taste, aroma, appearance etc, are we able to find clusters that have geographical state dependencies? In the clusters that we are able to form, are there hidden patterns that reveal groupings of reviews originating from users of the same state in certain clusters? And are these these clusters geographically relavant?
+If we cluster all the US reviews based on a variety of parameters that allow us to distinguish between the beers in question, such as taste, aroma, appearance etc, are we able to find clusters that have geographical state dependencies? In the clusters that we are able to form, are there hidden patterns that reveal groupings of reviews originating from users of the same state in certain clusters? And are these these clusters geographically relavant?  
 
 
 
 ## Group organisation
 Enzo: Preliminary data analysis and overall code pipline. Providing cleaned datasets for future analyis and data modularisation
-Thomas : Data modularisation, geographical maps visulisation of create "custom regions"
-Helene: Beer style analysis and website repository organisation
-Alex: statistical method suggestions and reviews clustering
-Iarantsoa: Parameter/feature selection and graph analysis. Additional clustering analysis
+Thomas : Data modularisation, geographical maps visulisation of create "custom regions"  
+Helene: Beer style analysis and website repository organisation  
+Alex: statistical method suggestions and reviews clustering  
+Iarantsoa: Parameter/feature selection and graph analysis. Additional clustering analysis  
 
 
 ## Our data story
-Below is the link to our website which will take you through the journey of our data story
+Below is the link to our website which will take you through the journey of our data story in more detail!
+
 
